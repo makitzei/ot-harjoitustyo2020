@@ -1,7 +1,7 @@
 # Ohjelmistotekniikan projekti
 
 ## Kuvaus
-Helsingin yliopiston Ohjelmistotekniikka-kurssin harjoitustyö syksyllä 2020.
+Helsingin yliopiston Ohjelmistotekniikka-kurssin harjoitustyö syksyllä 2020. Kurssilla tehdään sovellus ja opetellaan myös paljon sovelluksen tuotantoon liittyviä käytänteitä.
 
 ## Tehtävät
 - [x] Viikko 1 laskarit
