@@ -1,0 +1,114 @@
+makkeru@pop-os:~/Documents/Opiskelu/Ohjelmistotekniikka/ot_viikko1/tiedostoja$ git log --stat | cat
+commit 42fb7ab34ffa4abd07ceb5e0b1cee67c19cdf029
+Author: Maikki Heijala <maikki.heijala@live.com>
+Date:   Wed Oct 28 09:29:45 2020 +0200
+
+    file2 uudelleen nimetty file22:ksi
+
+ tiedostoja/{file2.txt => file22.txt} | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit db45210faa2a68c415fb80a78b66b37d98242252
+Author: Maikki Heijala <maikki.heijala@live.com>
+Date:   Wed Oct 28 09:28:14 2020 +0200
+
+    file1 poistettu
+
+ tiedostoja/file1.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 3a4c54e1fe61e15d40cf5de5656349c3bb18772b
+Author: Maikki Heijala <maikki.heijala@live.com>
+Date:   Wed Oct 28 09:16:04 2020 +0200
+
+    tiedostoja-alikansio lisätty
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 88c46f4f29da6f91ad09bc998485dd3be9c9d8ef
+Author: Maikki Heijala <maikki.heijala@live.com>
+Date:   Wed Oct 28 08:57:41 2020 +0200
+
+    muokattu ekaa ja kolmatta patch-muodossa
+
+ eka.txt    | 4 +++-
+ kolmas.txt | 6 +++++-
+ 2 files changed, 8 insertions(+), 2 deletions(-)
+
+commit fe0edad63fd9f22d4fce67a532191602f1fbb2f6
+Author: Maikki Heijala <maikki.heijala@live.com>
+Date:   Wed Oct 28 08:44:57 2020 +0200
+
+    tiedosto.txt uudelleen nimetty
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit e3f67853f67fd849928235698140670b48f14fc3
+Author: Maikki Heijala <maikki.heijala@live.com>
+Date:   Wed Oct 28 08:42:23 2020 +0200
+
+    toinen.txt poistettu
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 073ef5f9eb2ed5dcba964db2229a95dbfdf3e54c
+Author: Maikki Heijala <maikki.heijala@live.com>
+Date:   Wed Oct 28 08:39:14 2020 +0200
+
+    muutoksia tiedosto.txt-tiedostoon
+
+ tiedosto.txt | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+commit 35c07c83bedf60debe4f90e66f1a721ee3e1fdbc
+Author: Maikki Heijala <maikki.heijala@live.com>
+Date:   Wed Oct 28 08:29:33 2020 +0200
+
+    uusi kansio ja kuva
+
+ stuff/dino.jpg | Bin 0 -> 146540 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit f9167b5aea9c2572f640f549010bc5a977d3474c
+Author: Maikki Heijala <maikki.heijala@live.com>
+Date:   Wed Oct 28 08:24:24 2020 +0200
+
+    toka ja kolmas muutettu
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 35560d8f90249d55f94a6334afd81c3d64535abd
+Author: Maikki Heijala <maikki.heijala@live.com>
+Date:   Wed Oct 28 08:22:17 2020 +0200
+
+    kolmas lisätty
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 222ede51e474e64069e10dee06d52a667a369a24
+Author: Maikki Heijala <maikki.heijala@live.com>
+Date:   Wed Oct 28 08:18:13 2020 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit ff44be0ebb8861a866acb029c7c52c211f51dc71
+Author: Maikki Heijala <maikki.heijala@live.com>
+Date:   Wed Oct 28 08:12:21 2020 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
