@@ -112,3 +112,5 @@ Date:   Wed Oct 28 08:12:21 2020 +0200
  tiedosto.txt | 0
  1 file changed, 0 insertions(+), 0 deletions(-)
 
+***
+Tänne loppuun olen lisännyt hieman tekstiä, että voin harjoitella epäsynkrooni-tilannetta gitin kanssa.
