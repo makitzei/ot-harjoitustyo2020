@@ -1,13 +1,14 @@
 # Ohjelmistotekniikan projekti
 
-## Tavoite
-Haluan oppia _lisää_!
+## Kuvaus
+Helsingin yliopiston Ohjelmistotekniikka-kurssin harjoitustyö syksyllä 2020.
 
 ## Tehtävät
-- [x] Viikko 1
+- [x] Viikko 1 laskarit
     * [komentorivi.txt](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/laskarit/viikko1/komentorivi.txt)
     * [gitlog.txt](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/laskarit/viikko1/gitlog.txt)
-- [ ] Viikko 2
+- [ ] Viikko 2 laskarit
+- [ ] Viikko 3 laskarit
 
 ## ToDo
 * Aiheen __täsmennys__ ja __rajailu__
