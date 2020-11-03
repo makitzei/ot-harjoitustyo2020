@@ -11,13 +11,13 @@ Helsingin yliopiston Ohjelmistotekniikka-kurssin harjoitustyö syksyllä 2020. K
     * [gitlog.txt](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/laskarit/viikko1/gitlog.txt)
 - [x] Viikko 2 laskarit
     * [viikko2-kansio](https://github.com/makitzei/ot-harjoitustyo2020/tree/master/laskarit/viikko2)
-    * [Maksukortti-projektin omat testit](https://github.com/makitzei/ot-harjoitustyo2020/tree/master/laskarit/viikko2/Maksukortti/src/test/java)
-    * [Unicafe-projektin testit](https://github.com/makitzei/ot-harjoitustyo2020/tree/master/laskarit/viikko2/Unicafe/src/test/java/com/mycompany/unicafe)
     * [testikattavuus.png](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/laskarit/viikko2/testikattavuus_screenshot.png)
 - [ ] Viikko 3 laskarit
 
 ### Harjoitustyö
-- [ ] Viikko 2
+- [x] Viikko 2
+    * [Vaatimusmäärittely](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/LukujarjestysSovellus/dokumentaatio/vaatimusmaarittely.md)
+    * [Työaikakirjanpito](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/LukujarjestysSovellus/dokumentaatio/tuntikirjanpito.md)
 - [ ] Viikko 3
 
 ## ToDo
