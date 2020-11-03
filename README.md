@@ -20,6 +20,6 @@ Helsingin yliopiston Ohjelmistotekniikka-kurssin harjoitustyö syksyllä 2020. K
     * [Työaikakirjanpito](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/LukujarjestysSovellus/dokumentaatio/tuntikirjanpito.md)
 - [ ] Viikko 3
 
-## ToDo
-* Aiheen __täsmennys__ ja __rajailu__
-    * Alustavasti on mielessä jonkinlainen lukujärjestyksen tekemisen ja/tai työajan seurannan mahdollistava sovellus
+## Seuraavana edessä
+* Sovelluksen käyttöliittymäluonnos
+* Koodauskokeiluja
