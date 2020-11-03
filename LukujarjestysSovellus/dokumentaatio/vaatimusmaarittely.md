@@ -13,8 +13,8 @@ Sovelluksen eri näkymät ovat kirjautumis- ja rekisteröitymisnäkymä, lukujä
 ## Toiminnallisuudet
 
 ### Ennen kirjautumista
-    * käyttäjä voi luoda uuden käyttäjätunnuksen
-    * käyttäjä voi kirjautua järjestelmään
+* käyttäjä voi luoda uuden käyttäjätunnuksen
+* käyttäjä voi kirjautua järjestelmään
 
 ### Kirjautumisen jälkeen
 * käyttäjä näkee aluksi tämän viikon oman lukujärjestyksensä
