@@ -24,6 +24,11 @@ public class MaksukorttiTest {
     }
     
     @Test
+    public void saldoPalautuuOikein() {
+        assertEquals(10, kortti.saldo());
+    }
+    
+    @Test
     public void kortilleVoiLadataRahaa() {
         kortti.lataaRahaa(90);
         assertEquals("saldo: 1.0", kortti.toString());
