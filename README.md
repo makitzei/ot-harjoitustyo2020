@@ -12,7 +12,8 @@ Helsingin yliopiston Ohjelmistotekniikka-kurssin harjoitustyö syksyllä 2020. K
 - [x] Viikko 2 laskarit
     * [viikko2-kansio](https://github.com/makitzei/ot-harjoitustyo2020/tree/master/laskarit/viikko2)
     * [testikattavuus.png](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/laskarit/viikko2/testikattavuus_screenshot.png)
-- [ ] Viikko 3 laskarit
+- [x] Viikko 3 laskarit
+    * [viikko3-kansio](https://github.com/makitzei/ot-harjoitustyo2020/tree/master/laskarit/viikko3)
 
 ### Harjoitustyö
 - [x] Viikko 2
@@ -21,5 +22,4 @@ Helsingin yliopiston Ohjelmistotekniikka-kurssin harjoitustyö syksyllä 2020. K
 - [ ] Viikko 3
 
 ## Seuraavana edessä
-* Sovelluksen käyttöliittymäluonnos
 * Koodauskokeiluja
