@@ -6,7 +6,7 @@ Sovelluksen avulla käyttäjät voivat tehdä itselleen viikkokohtaisia lukujär
 
 ## Käyttöliittymäluonnos
 
-![kayttoliittyma_1](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/LukujarjestysSovellus/dokumentaatio/kuvat/kl_luonnos_1.png)
+![kayttoliittyma_1](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/TimetableApp/dokumentaatio/kuvat/kl_luonnos_1.png)
 
 Sovelluksen eri näkymät ovat kirjautumis- ja rekisteröitymisnäkymä, lukujärjestyksen katselunäkymä ja uuden lukujärjstykseen laitettavan tehtävän/aiheen lisääminen.
 
