@@ -19,6 +19,7 @@ Helsingin yliopiston Ohjelmistotekniikka-kurssin harjoitustyö syksyllä 2020. K
 - [x] Viikko 2
     * [Vaatimusmäärittely](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/LukujarjestysSovellus/dokumentaatio/vaatimusmaarittely.md)
     * [Työaikakirjanpito](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/LukujarjestysSovellus/dokumentaatio/tuntikirjanpito.md)
+    * :bangbang: HUOM! Nämä linkit ovat vielä suomenkieliseen, ennen deadlinea alustettuun projektiin. Työ jatkuu TimetableApp-projektissa ja suomenkielinen poistetaan tokan viikon tarkistuksien jälkeen.
 - [ ] Viikko 3
 
 ## Seuraavana edessä
