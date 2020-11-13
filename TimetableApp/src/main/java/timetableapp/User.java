@@ -1,12 +1,16 @@
 package timetableapp;
 
+import java.util.ArrayList;
+
 public class User {
     private String realName;
     private String username;
+    private ArrayList<Timetable> timetables;
     
     public User(String realName, String username) {
         this.realName = realName;
         this.username = username;
+        this.timetables = new ArrayList<>();
     }
     
     public String getRealName() {
@@ -15,6 +19,14 @@ public class User {
     
     public String getUsername() {
         return this.username;
+    }
+    
+    public ArrayList<Timetable> getTimetables() {
+        return this.timetables;
+    }
+    
+    public void addTimetable(Timetable timetable) {
+        this.timetables.add(timetable);
     }
             
 }
