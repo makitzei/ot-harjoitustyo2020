@@ -1,5 +1,6 @@
-package timetableapp;
+package timetableapp.domain;
 
+import timetableapp.domain.Timetable;
 import java.util.ArrayList;
 
 public class User {

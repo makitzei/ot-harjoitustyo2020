@@ -1,4 +1,4 @@
-package timetableapp;
+package timetableapp.domain;
 
 public class Event {
     private String subject;

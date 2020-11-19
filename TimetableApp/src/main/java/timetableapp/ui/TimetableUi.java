@@ -1,4 +1,4 @@
-package timetableapp;
+package timetableapp.ui;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;

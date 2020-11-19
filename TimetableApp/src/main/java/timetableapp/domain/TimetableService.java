@@ -1,4 +1,4 @@
-package timetableapp;
+package timetableapp.domain;
 
 public class TimetableService {
     

@@ -1,5 +1,7 @@
 package timetableapp;
 
+import timetableapp.domain.Timetable;
+import timetableapp.domain.Event;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

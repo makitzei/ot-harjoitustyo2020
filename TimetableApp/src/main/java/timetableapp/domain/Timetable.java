@@ -1,5 +1,6 @@
-package timetableapp;
+package timetableapp.domain;
 
+import timetableapp.domain.Event;
 import java.util.ArrayList;
 
 public class Timetable {

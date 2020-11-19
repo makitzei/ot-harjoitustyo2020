@@ -26,7 +26,7 @@
                 <version>0.8.3</version>
                 <configuration>
                     <excludes>
-                        <exclude>timetableapp/TimetableUi.class</exclude>
+                        <exclude>timetableapp/ui/TimetableUi.class</exclude>
                     </excludes>
                 </configuration>
                 <executions>
