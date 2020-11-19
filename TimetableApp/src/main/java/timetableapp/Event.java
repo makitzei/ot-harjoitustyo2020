@@ -46,7 +46,7 @@ public class Event {
     }
     
     public void startLater(int hours) {
-        int newStart = this.start+hours;
+        int newStart = this.start + hours;
         if (newStart < this.stop) {
             this.start = newStart;
         }
