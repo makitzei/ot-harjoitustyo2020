@@ -8,5 +8,5 @@
 12.11. | 4 | JavaFX-kertausta, käyttöliittymän 1. versio
 13.11. | 3 | ensimmäiset olioluokat ja niiden testejä 
 19.11. | 2 | checkstylen lisäys, kerrosarkkitehtuuri kansiorakenteeseen, käyttöliittymän ohittaminen tarkistuksissa ja testeissä 
-20.11. | 4 | dokumentaatio, tietokanta-asioiden opiskelua ja käyttöönottoa 
-yht. | 19 |
+20.11. | 3 | dokumentaatio, tietokanta-asioiden opiskelua ja testailua
+yht. | 18 |
