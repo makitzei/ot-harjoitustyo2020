@@ -11,4 +11,5 @@
 20.11. | 3 | dokumentaatio, tietokanta-asioiden opiskelua ja testailua  
 24.11. | 3 | käyttäjän tallentaminen tekstitiedostoon, sisään- ja uloskirjautuminen
 24.11. | 2 | arkkitehtuurikuvaus, dokumentaatio
-yht. | 23 |
+24.11. | 0.5 | testailua laitoksen koneella
+yht. | 23.5 |
