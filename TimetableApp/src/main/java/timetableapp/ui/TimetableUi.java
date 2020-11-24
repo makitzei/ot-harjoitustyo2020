@@ -16,21 +16,30 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import timetableapp.dao.FileUserDao;
+import timetableapp.domain.TimetableService;
 
 public class TimetableUi extends Application {
     
+    private TimetableService timetableService;
+    
+    @Override
+    public void init() throws Exception {
+        //Luodaan tietokanta tai yhteys siihen
+        FileUserDao userDao = new FileUserDao("users.txt");
+
+        // alustetaan sovelluslogiikka
+        timetableService = new TimetableService(userDao);
+    }
+    
     @Override
     public void start(Stage window) {
-        
-        // Tietokannan alustus tässä tai mieluummin 
-        // vielä mainin puolella
-        // Luo ylätason asettelua, ettei tule toistoa
         
         // 1. Login screen
         
         // 1.1 login components
         Label loginText = new Label("Käyttäjätunnus:");
-        TextField loginUsername = new TextField();
+        TextField loginUsername = new TextField("");
         Button loginButton = new Button("Kirjaudu sisään");
         Button loginCreateUserButton = new Button("Luo uusi käyttäjä");
         
@@ -57,8 +66,8 @@ public class TimetableUi extends Application {
         Label createUserText = new Label("Anna nimesi ja uusi käyttäjätunnus");
         Label createUserRealText = new Label("Etu- ja sukunimi:");
         Label createUsername = new Label("Uusi käyttäjätunnus:");
-        TextField createUserRealField = new TextField();
-        TextField createUsernameField = new TextField();
+        TextField createUserRealField = new TextField("");
+        TextField createUsernameField = new TextField("");
         Button createUserButton = new Button("Luo käyttäjä");
         
         // 2.2 login layout
@@ -80,7 +89,6 @@ public class TimetableUi extends Application {
         // 2.4. set scene
         Scene sceneCreateUser = new Scene(createUserLayout);
         
-
         // 3. Timetable screen
         
         // 3.1 components
@@ -186,15 +194,23 @@ public class TimetableUi extends Application {
         });
         
         createUserButton.setOnAction((event) -> {
-            window.setScene(sceneLogin);
+            String name = createUserRealField.getText();
+            String username = createUsernameField.getText();
+            if (timetableService.createUser(name, username)){
+                window.setScene(sceneLogin);
+            }
         });
         
         // 9.2 Buttons sign in - sign out
         loginButton.setOnAction((event) -> {
-            window.setScene(sceneTimetable);
+            String username = loginUsername.getText();
+            if (timetableService.login(username)) {
+                window.setScene(sceneTimetable);
+            } 
         });
         
         logoutButton.setOnAction((event) -> {
+            timetableService.logout();
             window.setScene(sceneLogin);
         });
         

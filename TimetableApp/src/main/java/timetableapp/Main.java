@@ -1,3 +1,4 @@
+//OIKEA, ei testi!
 package timetableapp;
 
 import timetableapp.ui.TimetableUi;
