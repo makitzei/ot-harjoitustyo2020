@@ -9,12 +9,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TitledPane;
-import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import timetableapp.dao.FileUserDao;
 import timetableapp.domain.TimetableService;
@@ -34,6 +36,9 @@ public class TimetableUi extends Application {
     
     @Override
     public void start(Stage window) {
+        
+        // 0. Background
+        Background background = new Background(new BackgroundFill(Color.MISTYROSE, CornerRadii.EMPTY, Insets.EMPTY));
         
         // 1. Login screen
         
@@ -58,6 +63,7 @@ public class TimetableUi extends Application {
         loginLayout2.setSpacing(10);
         loginLayout.setCenter(loginLayout2 );
         loginLayout.setPadding(new Insets(50,100,100,100));
+        loginLayout.setBackground(background);
         
         // 1.4. set scene
         Scene sceneLogin = new Scene(loginLayout);
@@ -91,6 +97,7 @@ public class TimetableUi extends Application {
         createUserLayout2.setSpacing(10);
         createUserLayout.setCenter(createUserLayout2);
         createUserLayout.setPadding(new Insets(50,100,100,100));
+        createUserLayout.setBackground(background);
         
         // 2.4. set scene
         Scene sceneCreateUser = new Scene(createUserLayout);
@@ -146,6 +153,7 @@ public class TimetableUi extends Application {
         timetableLayout.setTop(timetableWeek);
         timetableLayout.setCenter(timetableGrid);
         timetableLayout.setBottom(timeButtonLayout);
+        timetableLayout.setBackground(background);
         
         // 3.4. set scene
         Scene sceneTimetable = new Scene(timetableLayout);
@@ -188,6 +196,7 @@ public class TimetableUi extends Application {
         newEventLayout2.setSpacing(10);
         newEventLayout.setCenter(newEventLayout2);
         newEventLayout.setPadding(new Insets(50,100,100,100));
+        newEventLayout.setBackground(background);
         
         // 4.4 set scene
         Scene sceneNewEvent = new Scene(newEventLayout);
