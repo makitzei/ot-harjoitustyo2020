@@ -39,9 +39,10 @@ public class TimetableUi extends Application {
         
         // 1.1 login components
         Label loginText = new Label("Käyttäjätunnus:");
-        TextField loginUsername = new TextField("");
+        TextField loginUsername = new TextField();
         Button loginButton = new Button("Kirjaudu sisään");
         Button loginCreateUserButton = new Button("Luo uusi käyttäjä");
+        Label loginMessage = new Label("");
         
         // 1.2 login layout
         BorderPane loginLayout = new BorderPane();
@@ -51,6 +52,7 @@ public class TimetableUi extends Application {
         loginLayout2.getChildren().add(loginUsername);
         loginLayout2.getChildren().add(loginButton);
         loginLayout2.getChildren().add(loginCreateUserButton);
+        loginLayout2.getChildren().add(loginMessage);
         
         // 1.3 styling 
         loginLayout2.setSpacing(10);
@@ -66,9 +68,11 @@ public class TimetableUi extends Application {
         Label createUserText = new Label("Anna nimesi ja uusi käyttäjätunnus");
         Label createUserRealText = new Label("Etu- ja sukunimi:");
         Label createUsername = new Label("Uusi käyttäjätunnus:");
-        TextField createUserRealField = new TextField("");
-        TextField createUsernameField = new TextField("");
+        TextField createUserRealField = new TextField();
+        TextField createUsernameField = new TextField();
         Button createUserButton = new Button("Luo käyttäjä");
+        Button createUserReturn = new Button("Takaisin");
+        Label createUserMessage = new Label("");
         
         // 2.2 login layout
         BorderPane createUserLayout = new BorderPane();
@@ -80,6 +84,8 @@ public class TimetableUi extends Application {
         createUserLayout2.getChildren().add(createUsername);
         createUserLayout2.getChildren().add(createUsernameField);
         createUserLayout2.getChildren().add(createUserButton);
+        createUserLayout2.getChildren().add(createUserReturn);
+        createUserLayout2.getChildren().add(createUserMessage);
         
         // 2.3 styling 
         createUserLayout2.setSpacing(10);
@@ -196,9 +202,23 @@ public class TimetableUi extends Application {
         createUserButton.setOnAction((event) -> {
             String name = createUserRealField.getText();
             String username = createUsernameField.getText();
-            if (timetableService.createUser(name, username)){
+            if (username.length() < 4 || name.length() < 4) {
+                createUserMessage.setText("Nimi tai käyttäjätunnus liian lyhyt");
+            } else if (timetableService.createUser(name, username)){
                 window.setScene(sceneLogin);
+                createUserRealField.setText("");
+                createUsernameField.setText("");
+                createUserMessage.setText("");
+            } else {
+                createUserMessage.setText("Käyttäjätunnus on jo käytössä");
             }
+        });
+        
+        createUserReturn.setOnAction((event) -> {
+            window.setScene(sceneLogin);
+            createUserRealField.setText("");
+            createUsernameField.setText("");
+            createUserMessage.setText("");
         });
         
         // 9.2 Buttons sign in - sign out
@@ -206,7 +226,12 @@ public class TimetableUi extends Application {
             String username = loginUsername.getText();
             if (timetableService.login(username)) {
                 window.setScene(sceneTimetable);
-            } 
+                loginUsername.setText("");
+                loginMessage.setText("");
+            }
+            else {
+                loginMessage.setText("Käyttäjätunnusta ei löydy");
+            }
         });
         
         logoutButton.setOnAction((event) -> {
