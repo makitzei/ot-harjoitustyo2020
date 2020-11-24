@@ -4,7 +4,8 @@ Sovelluksen käyttäjä voi tallentaa erilaisia tehtäviä koko viikon päivät 
 
 ## Dokumentaatio
 [Vaatimusmäärittely](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/TimetableApp/dokumentaatio/vaatimusmaarittely.md)  
-[Työaikakirjanpito](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/TimetableApp/dokumentaatio/tuntikirjanpito.md)
+[Työaikakirjanpito](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/TimetableApp/dokumentaatio/tuntikirjanpito.md)  
+[Arkkitehtuurikuvaus](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/TimetableApp/dokumentaatio/arkkitehtuuri.md)
 
 ## Käyttöohje
 Projektin voi kloonata koneelle ja ajaa komentoriviltä tai Netbeansissa.  
