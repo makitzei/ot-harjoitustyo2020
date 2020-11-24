@@ -10,17 +10,17 @@ Sovelluksen avulla käyttäjät voivat tehdä itselleen viikkokohtaisia lukujär
 
 Sovelluksen eri näkymät ovat kirjautumis- ja rekisteröitymisnäkymä, lukujärjestyksen katselunäkymä ja uuden lukujärjstykseen laitettavan tehtävän/aiheen lisääminen.
 
-## Toiminnallisuudet
+## Toiminnallisuudet (tehdyt merkattu täpällä alkuun)
 
 ### Ennen kirjautumista
-* käyttäjä voi luoda uuden käyttäjätunnuksen
-* käyttäjä voi kirjautua järjestelmään
+- [x] käyttäjä voi luoda uuden käyttäjätunnuksen
+- [x] käyttäjä voi kirjautua järjestelmään
 
 ### Kirjautumisen jälkeen
-* käyttäjä näkee aluksi tämän viikon oman lukujärjestyksensä
-* käyttäjä voi selata taakse- tai eteenpäin menneiden ja tulevien viikkojen lukujärjestyksiään
-* käyttäjä voi lisätä nykyiseen tai tuleviin lukujärjestyksiinsä lisää tehtäviä tai poistaa niitä
-* käyttäjä voi kirjautua ulos järjestelmästä
+- [ ] käyttäjä näkee aluksi tämän viikon oman lukujärjestyksensä
+- [ ] käyttäjä voi selata taakse- tai eteenpäin menneiden ja tulevien viikkojen lukujärjestyksiään
+- [ ] käyttäjä voi lisätä nykyiseen tai tuleviin lukujärjestyksiinsä lisää tehtäviä tai poistaa niitä
+- [x] käyttäjä voi kirjautua ulos järjestelmästä
 
 ## Jatkokehitysideoita
 
