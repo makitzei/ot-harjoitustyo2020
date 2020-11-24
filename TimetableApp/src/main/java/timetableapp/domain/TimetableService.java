@@ -11,14 +11,14 @@ public class TimetableService {
         this.userDao = userDao;
     }
     
-     public boolean createUser(String name, String username)  {   
+    public boolean createUser(String name, String username)  {   
         if (userDao.findByUsername(username) != null) {
             return false;
         }
         User user = new User(name, username);
         try {
             userDao.create(user);
-        } catch(Exception e) {
+        } catch (Exception e) {
             return false;
         }
 

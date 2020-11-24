@@ -28,10 +28,10 @@ public class FileUserDao implements UserDao {
         
     }
     
-    private void save() throws Exception{
+    private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (User user : users) {
-                writer.write(user.getRealName()+ ";" + user.getUsername() + "\n");
+                writer.write(user.getRealName() + ";" + user.getUsername() + "\n");
             }
         } 
     }
