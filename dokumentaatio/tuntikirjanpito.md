@@ -14,4 +14,5 @@
 24.11. | 0.5 | testailua laitoksen koneella
 26.11. | 0.5 | pakkaamisen opiskelua ja virheen etsimistä
 30.11. | 0.5 | dokumentaation muokkaus ja README:n korjailu palautteen mukaan
-yht. | 24.5 |
+30.11. | 1.5 | uusien testien kirjoittaminen
+yht. | 26 |
