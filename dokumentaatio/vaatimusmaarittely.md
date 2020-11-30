@@ -13,14 +13,14 @@ Sovelluksen eri näkymät ovat kirjautumis- ja rekisteröitymisnäkymä, lukujä
 ## Toiminnallisuudet (tehdyt merkattu täpällä alkuun)
 
 ### Ennen kirjautumista
-- [x] käyttäjä voi luoda uuden käyttäjätunnuksen
-- [x] käyttäjä voi kirjautua järjestelmään
+- [x] käyttäjä voi luoda uuden käyttäjätunnuksen (viikko 4)
+- [x] käyttäjä voi kirjautua järjestelmään (viikko 4)
 
 ### Kirjautumisen jälkeen
 - [ ] käyttäjä näkee aluksi tämän viikon oman lukujärjestyksensä
 - [ ] käyttäjä voi selata taakse- tai eteenpäin menneiden ja tulevien viikkojen lukujärjestyksiään
 - [ ] käyttäjä voi lisätä nykyiseen tai tuleviin lukujärjestyksiinsä lisää tehtäviä tai poistaa niitä
-- [x] käyttäjä voi kirjautua ulos järjestelmästä
+- [x] käyttäjä voi kirjautua ulos järjestelmästä (viikko 4)
 
 ## Jatkokehitysideoita
 
