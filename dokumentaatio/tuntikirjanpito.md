@@ -15,4 +15,5 @@
 26.11. | 0.5 | pakkaamisen opiskelua ja virheen etsimistä
 30.11. | 0.5 | dokumentaation muokkaus ja README:n korjailu palautteen mukaan
 30.11. | 1.5 | uusien testien kirjoittaminen
-yht. | 26 |
+30.11. | 2 | lukujärjestyksen tallentaminen tekstitiedostoon, lisätestejä ja refaktoroimista
+yht. | 28 |
