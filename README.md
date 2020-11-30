@@ -3,21 +3,27 @@
 Sovelluksen käyttäjä voi tallentaa erilaisia tehtäviä koko viikon päivät kattavaan lukujärjestykseen. Myös menneiden ja tulevien viikkojen lukujärjestyksiä voi katsella. Sovellukseen tulee kirjautua tai luoda uusi käyttäjätili. Jokaisella käyttäjällä on oma yksilöllinen lukujärjestyksensä.
 
 ## Dokumentaatio
+[Käyttöohje](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/kayttoohje.md)  
 [Vaatimusmäärittely](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/vaatimusmaarittely.md)  
 [Työaikakirjanpito](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/tuntikirjanpito.md)  
 [Arkkitehtuurikuvaus](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/arkkitehtuuri.md)
 
-## Käyttöohje
-Projektin voi kloonata koneelle ja ajaa komentoriviltä tai Netbeansissa.  
-  
-Siirry komentorivillä kansioon, jonne haluat kloonata projektin ja aja komento  
+## Komentorivitoiminnot
+
+### Testaus
+Testit voi suorittaa projektin juuressa komennolla
 ```
-git clone https://github.com/makitzei/ot-harjoitustyo2020.git
+mvn test
 ```
-Mukana tulee myös projektin suorituksen kannalta epäoleellinen tehtäviä sisältävä kansio "laskarit", jonka voi halutessaan poistaa.  
-  
-Projektin voi suorittaa suoraan komentoriviltä siirtymällä projektikansion juureen, jossa sijaitsee tiedosto *pom.xml*, ja antamalla komennon  
+Testikattavuusraportti luodaan komennolla 
 ```
-mvn compile exec:java -Dexec.mainClass=timetableapp.Main
+mvn jacoco:report
 ```
-Projektin voi myös avata Netbeansissa ja suorittaa siellä normaalisti vihreää nappia painamalla. Jos projekti ei löydä suoritettavaa Main-luokkaa, sen voi lisätä itse klikkaamalla auki olevalta Projects-välilehdeltä projektin juuresta *TimetableApp -> Properties -> Run* ja kirjoittamalla kohtaan "Main Class" suoritettavaksi luokaksi *timetableapp.Main*.
+Kattavuusraporttia voi katsella avaamalla selaimessa tiedoston *target/site/jacoco/index.html*
+
+### Checkstyle
+Tiedostossa checkstyle.xml on määritelty koodin tarkistukset, jotka voi suorittaa komennolla
+```
+mvn jxr:jxr checkstyle:checkstyle
+```
+Tarkistuksen tuloksia voi tarkastella avaamalla selaimessa tiedoston *target/site/checkstyle.html*
