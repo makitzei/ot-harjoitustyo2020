@@ -2,7 +2,7 @@
 
 ## Sovelluksen tarkoitus
 
-Sovelluksen avulla käyttäjät voivat tehdä itselleen viikkokohtaisia lukujärjestyksiä ja seurata viikoittaista työajan jakautumistaan eri tehtäville. Sovellukseen tulee reksiteröityä, jolloin jokaisella käyttäjällä on oma lukujärjestyksensä.
+Sovelluksen avulla käyttäjät voivat tehdä itselleen viikkokohtaisia lukujärjestyksiä ja seurata viikoittaista työajan jakautumistaan eri tehtäville. Sovellukseen tulee rekisteröityä, jolloin jokaisella käyttäjällä on oma lukujärjestyksensä.
 
 ## Käyttöliittymäluonnos
 
