@@ -1,4 +1,4 @@
-package timetableapp;
+package timetableapp.domain;
 
 import timetableapp.domain.Event;
 import org.junit.After;
@@ -40,6 +40,30 @@ public class EventTest {
     @Test
     public void dayRight() {
         assertEquals("monday", event.getDay());
+    }
+    
+    @Test
+    public void setSubjecttRight() {
+        event.setSubject("procrastination");
+        assertEquals("procrastination", event.getSubject());
+    }
+    
+    @Test
+    public void setStartRight() {
+        event.setStart(10);
+        assertEquals(10, event.getStart());
+    }
+    
+    @Test
+    public void setStoptRight() {
+        event.setStop(13);
+        assertEquals(13, event.getStop());
+    }
+    
+    @Test
+    public void setDayRight() {
+        event.setDay("tuesday");
+        assertEquals("tuesday", event.getDay());
     }
     
     @Test

@@ -40,4 +40,8 @@ public class TimetableService {
         loggedIn = null;
     }
     
+    public User getLoggedUser() {
+        return loggedIn;
+    }
+    
 }

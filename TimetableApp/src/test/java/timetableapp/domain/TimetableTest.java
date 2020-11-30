@@ -1,4 +1,4 @@
-package timetableapp;
+package timetableapp.domain;
 
 import timetableapp.domain.Timetable;
 import timetableapp.domain.Event;
