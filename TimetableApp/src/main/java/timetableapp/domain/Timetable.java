@@ -4,12 +4,18 @@ import timetableapp.domain.Event;
 import java.util.ArrayList;
 
 public class Timetable {
+    private String username;
     private int week;
     private ArrayList<Event> events;
     
-    public Timetable(int week) {
+    public Timetable(String username, int week) {
+        this.username = username;
         this.week = week;
         this.events = new ArrayList<>();
+    }
+    
+    public String getUser() {
+        return this.username;
     }
     
     public int getWeek() {

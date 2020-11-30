@@ -18,6 +18,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import timetableapp.dao.FileTimetableDao;
 import timetableapp.dao.FileUserDao;
 import timetableapp.domain.TimetableService;
 
@@ -29,9 +30,10 @@ public class TimetableUi extends Application {
     public void init() throws Exception {
         //Luodaan tietokanta tai yhteys siihen
         FileUserDao userDao = new FileUserDao("users.txt");
+        FileTimetableDao timetableDao = new FileTimetableDao("timetables.txt");
 
         // alustetaan sovelluslogiikka
-        timetableService = new TimetableService(userDao);
+        timetableService = new TimetableService(userDao, timetableDao);
     }
     
     @Override

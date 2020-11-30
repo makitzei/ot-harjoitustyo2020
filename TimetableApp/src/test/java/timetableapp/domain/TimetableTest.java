@@ -17,7 +17,7 @@ public class TimetableTest {
     
     @Before
     public void setUp() {
-        timetable = new Timetable(42);
+        timetable = new Timetable("testaaja",42);
         event1 = new Event("programming", 8, 12, "monday");
         event2 = new Event("jogging", 15, 17, "tuesday");
     }

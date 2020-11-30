@@ -7,12 +7,14 @@ import static org.junit.Assert.*;
 public class TimetableServiceUserTest {
     
     FakeUserDao userDao;
+    FakeTimetableDao timetableDao;
     TimetableService service;
     
     @Before
     public void setUp() {
         userDao = new FakeUserDao();
-        service = new TimetableService(userDao);    
+        timetableDao = new FakeTimetableDao();
+        service = new TimetableService(userDao,timetableDao);    
     }
     
     @Test

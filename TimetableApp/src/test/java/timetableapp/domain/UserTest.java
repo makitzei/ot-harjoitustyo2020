@@ -21,8 +21,8 @@ public class UserTest {
     @Before
     public void setUp() {
         user = new User("Bob John", "bobby");
-        timetable1 = new Timetable(42);
-        timetable2 = new Timetable(43);
+        timetable1 = new Timetable("bobby",42);
+        timetable2 = new Timetable("bobby",43);
         event1 = new Event("programming", 8, 12, "monday");
         event2 = new Event("jogging", 15, 17, "tuesday");
         
