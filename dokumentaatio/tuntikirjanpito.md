@@ -12,4 +12,6 @@
 24.11. | 3 | käyttäjän tallentaminen tekstitiedostoon, sisään- ja uloskirjautuminen
 24.11. | 2 | arkkitehtuurikuvaus, dokumentaatio
 24.11. | 0.5 | testailua laitoksen koneella
-yht. | 23.5 |
+26.11. | 0.5 | pakkaamisen opiskelua ja virheen etsimistä
+30.11. | 0.5 | dokumentaation muokkaus ja README:n korjailu palautteen mukaan
+yht. | 24.5 |
