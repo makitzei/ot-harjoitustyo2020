@@ -3,9 +3,9 @@
 Sovelluksen käyttäjä voi tallentaa erilaisia tehtäviä koko viikon päivät kattavaan lukujärjestykseen. Myös menneiden ja tulevien viikkojen lukujärjestyksiä voi katsella. Sovellukseen tulee kirjautua tai luoda uusi käyttäjätili. Jokaisella käyttäjällä on oma yksilöllinen lukujärjestyksensä.
 
 ## Dokumentaatio
-[Vaatimusmäärittely](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/TimetableApp/dokumentaatio/vaatimusmaarittely.md)  
-[Työaikakirjanpito](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/TimetableApp/dokumentaatio/tuntikirjanpito.md)  
-[Arkkitehtuurikuvaus](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/TimetableApp/dokumentaatio/arkkitehtuuri.md)
+[Vaatimusmäärittely](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/vaatimusmaarittely.md)  
+[Työaikakirjanpito](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/tuntikirjanpito.md)  
+[Arkkitehtuurikuvaus](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/arkkitehtuuri.md)
 
 ## Käyttöohje
 Projektin voi kloonata koneelle ja ajaa komentoriviltä tai Netbeansissa.  
