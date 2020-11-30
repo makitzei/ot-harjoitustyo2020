@@ -30,10 +30,10 @@ public class FileTimetableDao implements TimetableDao {
         }
     }
     
-    private void save() throws Exception{
+    private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (Timetable timetable : timetables) {
-                writer.write(timetable.getUser()+ ";" + timetable.getWeek() + "\n");
+                writer.write(timetable.getUser() + ";" + timetable.getWeek() + "\n");
             }
         }
     }    

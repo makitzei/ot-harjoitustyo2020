@@ -22,7 +22,7 @@ public class TimetableService {
         try {
             userDao.create(user);
             for (int i = 1; i <= 52; i++) {
-                Timetable timetable = new Timetable(username,i);
+                Timetable timetable = new Timetable(username, i);
                 timetableDao.create(timetable);
             }
         } catch (Exception e) {
