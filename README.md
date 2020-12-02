@@ -6,7 +6,10 @@ Sovelluksen käyttäjä voi tallentaa erilaisia tehtäviä koko viikon päivät 
 [Käyttöohje](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/kayttoohje.md)  
 [Vaatimusmäärittely](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/vaatimusmaarittely.md)  
 [Työaikakirjanpito](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/tuntikirjanpito.md)  
-[Arkkitehtuurikuvaus](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/arkkitehtuuri.md)
+[Arkkitehtuurikuvaus](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/arkkitehtuuri.md)  
+
+## Releaset
+[Viikko 5](https://github.com/makitzei/ot-harjoitustyo2020/releases)  
 
 ## Komentorivitoiminnot
 
@@ -20,6 +23,13 @@ Testikattavuusraportti luodaan komennolla
 mvn jacoco:report
 ```
 Kattavuusraporttia voi katsella avaamalla selaimessa tiedoston *target/site/jacoco/index.html*
+
+### Suoritettavan jar-tiedoston generointi
+
+Projektin hakemistoon *target* saa generoitua suoritettavan jar-tiedoston *TimetableApp-1.0-SNAPSHOT.jar* komennolla
+```
+mvn package
+```
 
 ### Checkstyle
 Tiedostossa checkstyle.xml on määritelty koodin tarkistukset, jotka voi suorittaa komennolla
