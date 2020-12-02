@@ -8,18 +8,20 @@ Sovelluksen avulla käyttäjät voivat tehdä itselleen viikkokohtaisia lukujär
 
 ![kayttoliittyma_1](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/kuvat/kl_luonnos_1.png)
 
-Sovelluksen eri näkymät ovat kirjautumis- ja rekisteröitymisnäkymä, lukujärjestyksen katselunäkymä ja uuden lukujärjstykseen laitettavan tehtävän/aiheen lisääminen.
+Sovelluksen eri näkymät ovat kirjautumis- ja rekisteröitymisnäkymä, lukujärjestyksen katselunäkymä ja uuden lukujärjestykseen laitettavan tehtävän/aiheen lisääminen.
 
 ## Toiminnallisuudet (tehdyt merkattu täpällä alkuun)
 
 ### Ennen kirjautumista
 - [x] käyttäjä voi luoda uuden käyttäjätunnuksen (viikko 4)
+- [x] kun uusi käyttäjätunnus luodaan, alustetaan tietokantaan (tekstitiedosto *timetables.txt*) pohja käyttäjän koko vuoden lukujärjestyksille (viikko 5)
 - [x] käyttäjä voi kirjautua järjestelmään (viikko 4)
 
 ### Kirjautumisen jälkeen
 - [ ] käyttäjä näkee aluksi tämän viikon oman lukujärjestyksensä
 - [ ] käyttäjä voi selata taakse- tai eteenpäin menneiden ja tulevien viikkojen lukujärjestyksiään
 - [ ] käyttäjä voi lisätä nykyiseen tai tuleviin lukujärjestyksiinsä lisää tehtäviä tai poistaa niitä
+- [x] alkuversio tapahtuman luomisesta: käyttäjä voi valita tapahtuman valmiista listasta ja asettaa sille tapahtuma-ajan, minkä jälkeen tapahtuman tiedot tulostuvat tapahtuman luomisnäkymään (viikko 5)
 - [x] käyttäjä voi kirjautua ulos järjestelmästä (viikko 4)
 
 ## Jatkokehitysideoita
