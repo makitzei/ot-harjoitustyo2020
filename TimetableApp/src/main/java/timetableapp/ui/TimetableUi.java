@@ -171,27 +171,35 @@ public class TimetableUi extends Application {
         
         ObservableList<String> subjects = 
             FXCollections.observableArrayList(
-                "opiskelu", "liikunta", "vapaa"
+                null,"opiskelu", "liikunta", "vapaa"
             );
         ObservableList<Integer> starts = 
             FXCollections.observableArrayList(
-                7,8,9,10,11,12,13,14,15,16,17,18
+                null,7,8,9,10,11,12,13,14,15,16,17,18
             );
         ObservableList<Integer> stops = 
             FXCollections.observableArrayList(
-                8,9,10,11,12,13,14,15,16,17,18,19
+                null,8,9,10,11,12,13,14,15,16,17,18,19
             );
         
         ObservableList<String> days = 
             FXCollections.observableArrayList(
-                "maanantai","tiistai","keskiviikko", "torstai", 
-                "perjanta", "lauantai", "sunnuntai"
+                null,"maanantai","tiistai","keskiviikko", "torstai", 
+                "perjantai", "lauantai", "sunnuntai"
             );
         
         ComboBox subjectCombo = new ComboBox(subjects);
+        String defaultSubjectText = "Valitse";
+        subjectCombo.setPromptText(defaultSubjectText);
         ComboBox startCombo = new ComboBox(starts);
+        String defaultStartText = "Alku";
+        startCombo.setPromptText(defaultStartText);
         ComboBox stopCombo = new ComboBox(stops);
+        String defaultStopText = "Loppu";
+        stopCombo.setPromptText(defaultStopText);
         ComboBox dayCombo = new ComboBox(days);
+        String defaultDayText = "Päivä";
+        dayCombo.setPromptText(defaultDayText);
         
         // 4.2 layout
         BorderPane newEventLayout = new BorderPane();
@@ -201,6 +209,7 @@ public class TimetableUi extends Application {
         tpLayout.getChildren().add(new Label("-"));
         tpLayout.getChildren().add(stopCombo);
         tpLayout.getChildren().add(dayCombo);
+        tpLayout.setPadding(new Insets(0,0,20,0));
         tpLayout.setSpacing(20);
         
         VBox newEventLayout2 = new VBox();
@@ -220,6 +229,8 @@ public class TimetableUi extends Application {
         
         // 4.4 set scene
         Scene sceneNewEvent = new Scene(newEventLayout);
+        
+        //5. - 8. Room for something else :)
         
         // 9. Actions
         
@@ -269,16 +280,41 @@ public class TimetableUi extends Application {
         });
         
         // 9.2 Buttons timetable <--> new event
-        timetableNewButton.setOnAction((event) -> {
+        timetableNewButton.setOnAction((event) -> {           
             window.setScene(sceneNewEvent);
         });
         
         newEventButton.setOnAction((event) -> {
-            window.setScene(sceneTimetable);
+            String subjectValue = (String) subjectCombo.getValue();
+            Integer startValue = (Integer) startCombo.getValue();
+            Integer stopValue = (Integer) stopCombo.getValue();
+            String dayValue = (String) dayCombo.getValue();
+            if ((subjectValue == null) || (startValue == null)
+                    ||(stopValue == null) || (dayValue == null)) {
+                newEventMessage.setText("Jokin valinnoista on tyhjä");
+            }
+            else if (stopValue <= startValue) {
+                newEventMessage.setText("Tarkista alku- ja loppuaika");
+            }
+            //Testitulostus vielä tässä vaiheessa
+            else {
+                newEventMessage.setText(subjectValue + " klo " + String.valueOf(startValue) 
+                    + " - " + String.valueOf(stopValue) + " " + dayValue + "na");
+                subjectCombo.setValue(null);
+                startCombo.setValue(null);
+                stopCombo.setValue(null);
+                dayCombo.setValue(null);
+            //window.setScene(sceneTimetable);    
+            }
+            
         });
         
         newEventReturn.setOnAction((event) -> {
             window.setScene(sceneTimetable);
+            subjectCombo.setValue(null);
+            startCombo.setValue(null);
+            stopCombo.setValue(null);
+            dayCombo.setValue(null);
             newEventMessage.setText("");
         });
         
