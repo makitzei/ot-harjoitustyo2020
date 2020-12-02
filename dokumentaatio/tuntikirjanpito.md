@@ -15,5 +15,7 @@
 26.11. | 0.5 | pakkaamisen opiskelua ja virheen etsimistä
 30.11. | 0.5 | dokumentaation muokkaus ja README:n korjailu palautteen mukaan
 30.11. | 1.5 | uusien testien kirjoittaminen
-30.11. | 2 | lukujärjestyksen tallentaminen tekstitiedostoon, lisätestejä ja refaktoroimista
-yht. | 28 |
+30.11. | 2 | lukujärjestyksen tallentaminen tekstitiedostoon, lisätestejä ja refaktoroimista  
+2.12. | 2 | käyttöliittymän parantelu: uuden tapahtuman lisäämisen alustamista
+2.12. | 1 | ensimmäinen release, dokumentaatio  
+yht. | 31 |
