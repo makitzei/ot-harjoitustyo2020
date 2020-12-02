@@ -17,5 +17,6 @@
 30.11. | 1.5 | uusien testien kirjoittaminen
 30.11. | 2 | lukujärjestyksen tallentaminen tekstitiedostoon, lisätestejä ja refaktoroimista  
 2.12. | 2 | käyttöliittymän parantelu: uuden tapahtuman lisäämisen alustamista
-2.12. | 1 | ensimmäinen release, dokumentaatio  
-yht. | 31 |
+2.12. | 1,5 | ensimmäinen release, dokumentaatiota  
+2.12. | 1 | sekvenssikaavio, dokumentaatiota
+yht. | 32,5 |
