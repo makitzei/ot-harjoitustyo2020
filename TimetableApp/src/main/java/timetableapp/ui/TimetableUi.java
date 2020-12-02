@@ -40,7 +40,7 @@ public class TimetableUi extends Application {
     public void start(Stage window) {
         
         // 0. Background
-        Background background = new Background(new BackgroundFill(Color.MISTYROSE, CornerRadii.EMPTY, Insets.EMPTY));
+        Background background = new Background(new BackgroundFill(Color.THISTLE, CornerRadii.EMPTY, Insets.EMPTY));
         
         // 1. Login screen
         
