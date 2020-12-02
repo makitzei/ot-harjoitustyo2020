@@ -108,13 +108,13 @@ public class TimetableUi extends Application {
         
         // 3.1 components
         Label timetableWeek = new Label("Viikko XX");
-        Label monday = new Label("Maanantai");
-        Label tuesday = new Label("Tiistai");
-        Label wednesday = new Label("Keskiviikko");
-        Label thursday = new Label("Torstai");
-        Label friday = new Label("Perjantai");
-        Label saturday = new Label("Lauantai");
-        Label sunday = new Label("Sunnuntai");
+        Label monday = new Label("maanantai");
+        Label tuesday = new Label("tiistai");
+        Label wednesday = new Label("keskiviikko");
+        Label thursday = new Label("torstai");
+        Label friday = new Label("perjantai");
+        Label saturday = new Label("lauantai");
+        Label sunday = new Label("sunnuntai");
         Button timetableNewButton = new Button("Lisää uusi");
         Button logoutButton = new Button("Kirjaudu ulos");
         
@@ -165,24 +165,40 @@ public class TimetableUi extends Application {
         // 4.1 components
         Label subject = new Label("Aihe:");
         Label time = new Label("Aika:");
+        Label newEventMessage = new Label("");
         Button newEventButton = new Button("Luo uusi");
+        Button newEventReturn = new Button("Takaisin");
         
-        ObservableList<String> example = 
+        ObservableList<String> subjects = 
             FXCollections.observableArrayList(
-                "tyhjä 1",
-                "tyhjä 2",
-                "tyhjä 3"
+                "opiskelu", "liikunta", "vapaa"
             );
-        ComboBox subjectCombo = new ComboBox(example);
-        ComboBox startCombo = new ComboBox(example);
-        ComboBox stopCombo = new ComboBox(example);
-        ComboBox dayCombo = new ComboBox(example);
+        ObservableList<Integer> starts = 
+            FXCollections.observableArrayList(
+                7,8,9,10,11,12,13,14,15,16,17,18
+            );
+        ObservableList<Integer> stops = 
+            FXCollections.observableArrayList(
+                8,9,10,11,12,13,14,15,16,17,18,19
+            );
+        
+        ObservableList<String> days = 
+            FXCollections.observableArrayList(
+                "maanantai","tiistai","keskiviikko", "torstai", 
+                "perjanta", "lauantai", "sunnuntai"
+            );
+        
+        ComboBox subjectCombo = new ComboBox(subjects);
+        ComboBox startCombo = new ComboBox(starts);
+        ComboBox stopCombo = new ComboBox(stops);
+        ComboBox dayCombo = new ComboBox(days);
         
         // 4.2 layout
         BorderPane newEventLayout = new BorderPane();
         
         HBox tpLayout = new HBox();
         tpLayout.getChildren().add(startCombo);
+        tpLayout.getChildren().add(new Label("-"));
         tpLayout.getChildren().add(stopCombo);
         tpLayout.getChildren().add(dayCombo);
         tpLayout.setSpacing(20);
@@ -193,6 +209,8 @@ public class TimetableUi extends Application {
         newEventLayout2.getChildren().add(time);
         newEventLayout2.getChildren().add(tpLayout);
         newEventLayout2.getChildren().add(newEventButton);
+        newEventLayout2.getChildren().add(newEventReturn);
+        newEventLayout2.getChildren().add(newEventMessage);
         
         // 4.3 styling
         newEventLayout2.setSpacing(10);
@@ -257,6 +275,11 @@ public class TimetableUi extends Application {
         
         newEventButton.setOnAction((event) -> {
             window.setScene(sceneTimetable);
+        });
+        
+        newEventReturn.setOnAction((event) -> {
+            window.setScene(sceneTimetable);
+            newEventMessage.setText("");
         });
         
         // 10. App start
