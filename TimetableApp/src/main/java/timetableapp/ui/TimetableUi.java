@@ -1,5 +1,6 @@
 package timetableapp.ui;
 
+import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,6 +16,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -107,9 +109,17 @@ public class TimetableUi extends Application {
         // 3. Timetable screen
         
         // 3.1 components
-        int activeWeek = timetableService.getActivetableWeek();
-        //int activeWeek = 1;
-        Label timetableWeek = new Label("Viikko " + String.valueOf(activeWeek));
+        ArrayList<Integer> weekList= new ArrayList<>();
+        for (int i = 1; i <= 52; i++) {
+            weekList.add(i);
+        }
+        ObservableList<Integer> weeks = FXCollections.observableArrayList(weekList);
+        ComboBox weekCombo = new ComboBox(weeks);
+        weekCombo.setPromptText("1");
+        Label timetableWeek = new Label("Viikko ");
+        //Pieni testi
+        Label timetableTest = new Label("Testiviesti olen");
+        //
         Label monday = new Label("maanantai");
         Label tuesday = new Label("tiistai");
         Label wednesday = new Label("keskiviikko");
@@ -122,6 +132,11 @@ public class TimetableUi extends Application {
         
         // 3.2 timetable screen layout
         BorderPane timetableLayout = new BorderPane();
+        
+        HBox weekLayout = new HBox();
+        weekLayout.getChildren().add(timetableWeek);
+        weekLayout.getChildren().add(weekCombo);
+        weekLayout.getChildren().add(timetableTest);
         
         HBox timeButtonLayout = new HBox();
         timeButtonLayout.getChildren().add(timetableNewButton);
@@ -139,7 +154,10 @@ public class TimetableUi extends Application {
         
         for (int x = 1; x <= 7; x++) {
             for (int y = 1; y <= 13; y++) {
-                timetableGrid.add(new Label(" [tyhjä] "), x, y);
+                Pane cell = new Pane();
+                cell.setPrefSize(100, 20);
+                cell.setBackground(new Background(new BackgroundFill(Color.BEIGE, CornerRadii.EMPTY, Insets.EMPTY)));
+                timetableGrid.add(cell, x, y);
             }
         }
         
@@ -152,9 +170,10 @@ public class TimetableUi extends Application {
         timetableGrid.setHgap(10);
         timetableGrid.setVgap(10);
         timetableGrid.setPadding(new Insets(20,20,20,50));
+        //timetableGrid.setGridLinesVisible(true);
         timetableLayout.setPadding(new Insets(50,100,100,100));
         
-        timetableLayout.setTop(timetableWeek);
+        timetableLayout.setTop(weekLayout);
         timetableLayout.setCenter(timetableGrid);
         timetableLayout.setBottom(timeButtonLayout);
         timetableLayout.setBackground(background);
@@ -281,7 +300,7 @@ public class TimetableUi extends Application {
             window.setScene(sceneLogin);
         });
         
-        // 9.2 Buttons timetable - new event
+        // 9.3 Buttons timetable - new event
         timetableNewButton.setOnAction((event) -> {           
             window.setScene(sceneNewEvent);
         });
@@ -319,6 +338,15 @@ public class TimetableUi extends Application {
             dayCombo.setValue(null);
             newEventMessage.setText("");
         });
+        
+        // 9.3 ComboBox timetable week
+        weekCombo.setOnAction((event) -> {
+            int week = (int) weekCombo.getValue();
+            timetableService.setActivetable(week);
+            timetableTest.setText("Aktiivinen viikko on nyt " + String.valueOf(timetableService.getActivetableWeek()));
+            window.setScene(sceneTimetable); 
+        });
+        
         
         // 10. App start
         window.setScene(sceneLogin);

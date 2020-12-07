@@ -22,7 +22,15 @@ public class TimetableServiceTimetableTest {
         service.login("testEst");
         Timetable t = service.getActivetable();
         assertEquals(1, t.getWeek());
-    }    
+    }
+
+    @Test
+    public void activeTimetableCanChange() {
+        service.login("testEst");
+        service.setActivetable(5);
+        Timetable t = service.getActivetable();
+        assertEquals(5, t.getWeek());
+    }
     
     
 }

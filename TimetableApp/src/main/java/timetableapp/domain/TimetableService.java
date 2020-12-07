@@ -65,12 +65,20 @@ public class TimetableService {
         return activeTable;
     }
     
+    public void setActivetable(int week) {
+        Timetable newActive = userTimetables.stream()
+                .filter(t->t.getWeek() == week)
+                .findFirst()
+                .orElse(null);
+        
+        this.activeTable = newActive;
+    }
+    
     public int getActivetableWeek() {
         if(activeTable == null) {
             return 0;
         }
-        return activeTable.getWeek();
-        
+        return activeTable.getWeek();     
     }
     
 }
