@@ -12,6 +12,7 @@ public class TimetableService {
     private UserDao userDao;
     private User loggedIn;
     private Timetable activeTable;
+    private ArrayList<Event> activeEvents;
     private List<Timetable> userTimetables;
     
     public TimetableService(UserDao userDao, TimetableDao timetableDao) {
@@ -19,6 +20,7 @@ public class TimetableService {
         this.timetableDao = timetableDao;
         this.loggedIn = null;
         this.activeTable = null;
+        this.activeEvents = null;
         this.userTimetables = null;
     }
     
@@ -74,6 +76,7 @@ public class TimetableService {
                 .orElse(null);
         
         this.activeTable = newActive;
+        this.activeEvents = this.activeTable.getEvents();
     }
     
     public int getActivetableWeek() {
@@ -92,14 +95,16 @@ public class TimetableService {
         }
         return true;    
     }
-    /*
-    public HashMap<String, ArrayList<Integer>> getEventLayouts() {
-        Timetable timetable = this.getActivetable();
-        HashMap result = new HashMap<>();
-        for (Event e : timetable.getEvents()) {
-            result.put(e.getSubject(), e.toCordinats());
-        }
-        return result;
+    
+    public ArrayList<String> eventsToString() {
+        ArrayList events = new ArrayList<>();
+        try {
+            for (Event event : this.activeEvents) {
+                events.add(event.toString());
+            }
+        } catch (Exception e) {
+            return null;
+        }   
+        return events;
     }
-    */
 }

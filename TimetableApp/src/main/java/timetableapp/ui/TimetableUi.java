@@ -160,6 +160,9 @@ public class TimetableUi extends Application {
                 cell.setPrefSize(100, 20);
                 cell.setBackground(new Background(new BackgroundFill(Color.BEIGE, CornerRadii.EMPTY, Insets.EMPTY)));
                 timetableGrid.add(cell, x, y);
+                
+                //Label cell = new Label("");
+                //timetableGrid.add(cell, x, y);
             }
         }
         
@@ -168,13 +171,7 @@ public class TimetableUi extends Application {
             timetableGrid.add(new Label(String.valueOf(time)), 0, y);
         }
         
-        //3.2.1 Add events to timetable
         
-        //HashMap eventsInTable = timetableService.getEventLayouts();
-        //if (!(eventsInTable.isEmpty())) {
-        //    Label subject = new Label("Ei ihan tyhjä!");
-        //    timetableGrid.add(subject, 3, 8);
-        //}
             
         // 3.3 styling 
         timetableGrid.setHgap(10);
@@ -354,10 +351,49 @@ public class TimetableUi extends Application {
         weekCombo.setOnAction((event) -> {
             int week = (int) weekCombo.getValue();
             timetableService.setActivetable(week);
+            // 9.3.1 Add events to timetable, won't work yet
+            /*
+            ArrayList<String> events = timetableService.eventsToString();
+            if (events != null) {
+                for (String eventString : events) {
+                    String[] parts = eventString.split(";");
+                    Label subjectLabel = new Label(parts[0]);
+                    int start = Integer.parseInt(parts[2]);
+                    int stop = Integer.parseInt(parts[3]);
+                    int dayCode = 0;
+                    String dayString = parts[1];
+                    if (dayString.equals("maanantai")) {
+                        dayCode = 1;
+                    }
+                    else if (dayString.equals("tiistai")) {
+                        dayCode = 2;
+                    }
+                    else if (dayString.equals("keskiviikko")) {
+                        dayCode = 3;
+                    }
+                    else if (dayString.equals("torstai")) {
+                        dayCode = 4;
+                    }
+                    else if (dayString.equals("perjantai")) {
+                        dayCode = 5;
+                    }
+                    else if (dayString.equals("lauantai")) {
+                        dayCode = 6;
+                    }
+                    else {
+                        dayCode = 7;
+                    }
+                    while (start < stop) {
+                        timetableGrid.add(subjectLabel, dayCode, start-6);
+                        start ++;
+                    }
+
+                }
+            }
+            */
             timetableTest.setText("Aktiivinen viikko on nyt " + String.valueOf(timetableService.getActivetableWeek()));
             window.setScene(sceneTimetable); 
         });
-        
         
         // 10. App start
         window.setScene(sceneLogin);
