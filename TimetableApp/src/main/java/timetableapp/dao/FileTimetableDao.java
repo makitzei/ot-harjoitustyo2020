@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 import timetableapp.domain.Event;
 import timetableapp.domain.Timetable;
 
@@ -49,6 +50,22 @@ public class FileTimetableDao implements TimetableDao {
     public List<Timetable> getAll() {
         return timetables;
     }
+    
+    @Override
+    public Timetable findByWeek(int week) {
+        return timetables.stream()
+            .filter(t->t.getWeek() == week)
+            .findFirst()
+            .orElse(null);
+    }
+    
+    @Override
+    public List<Timetable> findByUsername(String username) {
+        List<Timetable> result = timetables.stream()
+            .filter(t->t.getUser().equals(username))
+            .collect(Collectors.toList());
+        return result;
+    }
 /*
     @Override
     public Event createEvent(Event event) throws Exception {
@@ -60,5 +77,7 @@ public class FileTimetableDao implements TimetableDao {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 */
+
+
     
 }

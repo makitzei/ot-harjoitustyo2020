@@ -10,6 +10,10 @@ public interface TimetableDao {
 
     List<Timetable> getAll();
     
+    Timetable findByWeek(int week);
+    
+    List<Timetable> findByUsername(String username);
+    
     //Event createEvent(Event event) throws Exception;
     
     //List<Event> getAllEvents();

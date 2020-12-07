@@ -9,6 +9,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
+import timetableapp.domain.FakeUserDao;
 import timetableapp.domain.User;
 
 public class FileUserDaoTest {
@@ -22,10 +23,12 @@ public class FileUserDaoTest {
     
     @Before
     public void setUp() throws Exception {
-        userFile = testFolder.newFile("test_users.txt");  
+        userFile = testFolder.newFile("test_users.txt");
+        UserDao userDao = new FakeUserDao();
         
         try (FileWriter file = new FileWriter(userFile.getAbsolutePath())) {
             file.write("Essi Esimerkki;testEst\n");
+            file.write("Essi Esimerkki2;testEst2\n");
         }
         
         dao = new FileUserDao(userFile.getAbsolutePath());
@@ -34,7 +37,7 @@ public class FileUserDaoTest {
     @Test
     public void usersAreReadCorrectlyFromFile() {
         List<User> users = dao.getAll();
-        assertEquals(1, users.size());
+        assertEquals(2, users.size());
         User user = users.get(0);
         assertEquals("Essi Esimerkki", user.getRealName());
         assertEquals("testEst", user.getUsername());

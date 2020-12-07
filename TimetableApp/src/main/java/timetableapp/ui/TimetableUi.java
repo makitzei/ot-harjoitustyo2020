@@ -107,7 +107,9 @@ public class TimetableUi extends Application {
         // 3. Timetable screen
         
         // 3.1 components
-        Label timetableWeek = new Label("Viikko XX");
+        int activeWeek = timetableService.getActivetableWeek();
+        //int activeWeek = 1;
+        Label timetableWeek = new Label("Viikko " + String.valueOf(activeWeek));
         Label monday = new Label("maanantai");
         Label tuesday = new Label("tiistai");
         Label wednesday = new Label("keskiviikko");
@@ -279,7 +281,7 @@ public class TimetableUi extends Application {
             window.setScene(sceneLogin);
         });
         
-        // 9.2 Buttons timetable <--> new event
+        // 9.2 Buttons timetable - new event
         timetableNewButton.setOnAction((event) -> {           
             window.setScene(sceneNewEvent);
         });
