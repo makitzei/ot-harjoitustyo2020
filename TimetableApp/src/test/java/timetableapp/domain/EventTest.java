@@ -68,7 +68,7 @@ public class EventTest {
     
     @Test
     public void toStringRight() {
-        assertEquals("Event: programming -- monday -- 8-12", 
+        assertEquals("programming;monday;8;12", 
                 event.toString());
     }
     

@@ -321,6 +321,7 @@ public class TimetableUi extends Application {
             else {
                 newEventMessage.setText(subjectValue + " klo " + String.valueOf(startValue) 
                     + " - " + String.valueOf(stopValue) + " " + dayValue + "na");
+                timetableService.createEvent(subjectValue, startValue, stopValue, dayValue);
                 subjectCombo.setValue(null);
                 startCombo.setValue(null);
                 stopCombo.setValue(null);

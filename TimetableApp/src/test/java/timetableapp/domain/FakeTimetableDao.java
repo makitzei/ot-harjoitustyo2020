@@ -44,5 +44,15 @@ public class FakeTimetableDao implements TimetableDao {
             .collect(Collectors.toList());
         return result;
     }
+
+    @Override
+    public Event createEvent(Event event, Timetable timetable) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Event> getAllEvents() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

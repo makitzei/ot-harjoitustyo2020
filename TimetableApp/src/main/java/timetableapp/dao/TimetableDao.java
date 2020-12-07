@@ -14,8 +14,8 @@ public interface TimetableDao {
     
     List<Timetable> findByUsername(String username);
     
-    //Event createEvent(Event event) throws Exception;
+    Event createEvent(Event event, Timetable timetable) throws Exception;
     
-    //List<Event> getAllEvents();
+    List<Event> getAllEvents();
     
 }

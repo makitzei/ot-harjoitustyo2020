@@ -34,7 +34,12 @@ public class FileTimetableDao implements TimetableDao {
     private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (Timetable timetable : timetables) {
-                writer.write(timetable.getUser() + ";" + timetable.getWeek() + "\n");
+                String eventsString = "";
+                for (Event event : timetable.getEvents()){
+                    eventsString = ";" + eventsString + event.toString();
+                }
+                writer.write(timetable.getUser() + ";" + timetable.getWeek() 
+                        + eventsString +"\n");
             }
         }
     }    
@@ -66,17 +71,19 @@ public class FileTimetableDao implements TimetableDao {
             .collect(Collectors.toList());
         return result;
     }
-/*
+
     @Override
-    public Event createEvent(Event event) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Event createEvent(Event event, Timetable timetable) throws Exception {
+        timetable.addEvent(event);
+        save();
+        return event;
     }
 
     @Override
     public List<Event> getAllEvents() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-*/
+
 
 
     

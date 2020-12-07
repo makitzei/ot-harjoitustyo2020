@@ -45,7 +45,7 @@ public class TimetableService {
         }
         
         userTimetables = timetableDao.findByUsername(username);
-        activeTable = userTimetables.get(0);
+        this.setActivetable(1);
         loggedIn = user;
          
         return true;
@@ -81,4 +81,14 @@ public class TimetableService {
         return activeTable.getWeek();     
     }
     
+    public boolean createEvent(String subject, int start, int stop, String day) {
+        Event event = new Event(subject, start, stop, day);
+        try {
+            timetableDao.createEvent(event, activeTable);
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
+        
+    }
 }

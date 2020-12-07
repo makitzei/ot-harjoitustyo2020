@@ -61,8 +61,8 @@ public class Event {
     
     @Override
     public String toString() {
-        return "Event: " + this.subject + " -- " + this.day 
-                + " -- " + String.valueOf(start) 
-                + "-" + String.valueOf(stop);
+        return this.subject + ";" + this.day 
+                + ";" + String.valueOf(start) 
+                + ";" + String.valueOf(stop);
     }
 }

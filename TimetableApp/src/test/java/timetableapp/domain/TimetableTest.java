@@ -54,7 +54,7 @@ public class TimetableTest {
         timetable.addEvent(event1);
         timetable.addEvent(event2);
         Event firstEvent = timetable.getEvents().get(0);
-        assertEquals("Event: programming -- monday -- 8-12", 
+        assertEquals("programming;monday;8;12", 
                 firstEvent.toString());
     }
     
