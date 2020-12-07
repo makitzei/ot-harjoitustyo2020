@@ -1,5 +1,7 @@
 package timetableapp.domain;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import timetableapp.dao.TimetableDao;
 import timetableapp.dao.UserDao;
 import java.util.List;
@@ -88,7 +90,16 @@ public class TimetableService {
         } catch (Exception e) {
             return false;
         }
-        return true;
-        
+        return true;    
     }
+    /*
+    public HashMap<String, ArrayList<Integer>> getEventLayouts() {
+        Timetable timetable = this.getActivetable();
+        HashMap result = new HashMap<>();
+        for (Event e : timetable.getEvents()) {
+            result.put(e.getSubject(), e.toCordinats());
+        }
+        return result;
+    }
+    */
 }

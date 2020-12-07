@@ -1,6 +1,8 @@
 package timetableapp.ui;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Set;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -165,6 +167,14 @@ public class TimetableUi extends Application {
             int time = y+6;
             timetableGrid.add(new Label(String.valueOf(time)), 0, y);
         }
+        
+        //3.2.1 Add events to timetable
+        
+        //HashMap eventsInTable = timetableService.getEventLayouts();
+        //if (!(eventsInTable.isEmpty())) {
+        //    Label subject = new Label("Ei ihan tyhjä!");
+        //    timetableGrid.add(subject, 3, 8);
+        //}
             
         // 3.3 styling 
         timetableGrid.setHgap(10);
@@ -316,9 +326,9 @@ public class TimetableUi extends Application {
             }
             else if (stopValue <= startValue) {
                 newEventMessage.setText("Tarkista alku- ja loppuaika");
-            }
-            //Testitulostus vielä tässä vaiheessa
+            }            
             else {
+                //Testitulostus vielä tässä vaiheessa
                 newEventMessage.setText(subjectValue + " klo " + String.valueOf(startValue) 
                     + " - " + String.valueOf(stopValue) + " " + dayValue + "na");
                 timetableService.createEvent(subjectValue, startValue, stopValue, dayValue);

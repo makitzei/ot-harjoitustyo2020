@@ -1,5 +1,7 @@
 package timetableapp.domain;
 
+import java.util.ArrayList;
+
 public class Event {
     private String subject;
     private int start;
@@ -44,7 +46,7 @@ public class Event {
     public void setDay(String day) {
         this.day = day;
     }
-    
+    /*
     public void startLater(int hours) {
         int newStart = this.start + hours;
         if (newStart < this.stop) {
@@ -58,6 +60,7 @@ public class Event {
             this.stop = newStop;
         }
     }
+    */
     
     @Override
     public String toString() {
@@ -65,4 +68,34 @@ public class Event {
                 + ";" + String.valueOf(start) 
                 + ";" + String.valueOf(stop);
     }
+    //Apumetodi käyttöliittymälle, joka palauttaa aloitusajan koordinaateissa, keston ja päivän numerona
+    /*
+    public ArrayList<Integer> toCordinats() {
+        ArrayList result = new ArrayList<>();
+        result.add(this.start - 6);
+        result.add(this.stop - this.start);
+        if (this.day.equals("maanantai")) {
+            result.add(1);
+        }
+        else if (this.day.equals("tiistai")) {
+            result.add(2);
+        }
+        else if (this.day.equals("keskiviikko")) {
+            result.add(3);
+        }
+        else if (this.day.equals("torstai")) {
+            result.add(4);
+        }
+        else if (this.day.equals("perjantai")) {
+            result.add(5);
+        }
+        else if (this.day.equals("lauantai")) {
+            result.add(6);
+        }
+        else {
+            result.add(7);
+        }
+        return result;
+    }
+    */
 }

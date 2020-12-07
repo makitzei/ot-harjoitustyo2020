@@ -16,6 +16,5 @@ public interface TimetableDao {
     
     Event createEvent(Event event, Timetable timetable) throws Exception;
     
-    List<Event> getAllEvents();
     
 }

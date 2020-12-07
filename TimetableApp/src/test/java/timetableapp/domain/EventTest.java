@@ -71,7 +71,7 @@ public class EventTest {
         assertEquals("programming;monday;8;12", 
                 event.toString());
     }
-    
+/*    
     @Test
     public void startLaterButBeforeStopSnoozesStart() {
         event.startLater(2);
@@ -95,7 +95,7 @@ public class EventTest {
         event.stopLater(10);
         assertEquals(12, event.getStop());
     }
-    
+*/    
     
 
 }
