@@ -18,10 +18,13 @@ Sovelluksen eri näkymät ovat kirjautumis- ja rekisteröitymisnäkymä, lukujä
 - [x] käyttäjä voi kirjautua järjestelmään (viikko 4)
 
 ### Kirjautumisen jälkeen
+- [x] alkuversio: Käyttäjä näkee aluksi viikon 1 lukujärjestyspohjan ja voi selailla eri pohjia pudotusvalikosta. Tapahtumat eivät vielä näy pohjassa. (viikko 6)
 - [ ] käyttäjä näkee aluksi tämän viikon oman lukujärjestyksensä
-- [ ] käyttäjä voi selata taakse- tai eteenpäin menneiden ja tulevien viikkojen lukujärjestyksiään
-- [ ] käyttäjä voi lisätä nykyiseen tai tuleviin lukujärjestyksiinsä lisää tehtäviä tai poistaa niitä
+- [x] käyttäjä voi selata pudotusvalikosta menneiden ja tulevien viikkojen lukujärjestyksiään (viikko 6)
+- [x] käyttäjä voi lisätä nykyiseen tai tuleviin lukujärjestyksiinsä lisää tehtäviä (viikko 6)
+- [ ] käyttäjä voi poistaa tapahtumia 
 - [x] alkuversio tapahtuman luomisesta: käyttäjä voi valita tapahtuman valmiista listasta ja asettaa sille tapahtuma-ajan, minkä jälkeen tapahtuman tiedot tulostuvat tapahtuman luomisnäkymään (viikko 5)
+- [x] parempi versio tapahtuman luomisesta: tapahtuman tiedot tallentuvat myös tietokantaan (viikko 6)
 - [x] käyttäjä voi kirjautua ulos järjestelmästä (viikko 4)
 
 ## Jatkokehitysideoita
