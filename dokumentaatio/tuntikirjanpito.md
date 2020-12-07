@@ -19,4 +19,5 @@
 2.12. | 2 | käyttöliittymän parantelu: uuden tapahtuman lisäämisen alustamista
 2.12. | 1,5 | ensimmäinen release, dokumentaatiota  
 2.12. | 1 | sekvenssikaavio, dokumentaatiota
-yht. | 32,5 |
+7.12. | 8 | tapahtuman tallentaminen, käyttöliittymän parantelua
+yht. | 40,5 |
