@@ -1,5 +1,9 @@
 package timetableapp.domain;
 
+/**
+ * Järjestelmän käyttäjää edustava luokka
+ */
+
 import timetableapp.domain.Timetable;
 import java.util.ArrayList;
 

@@ -1,5 +1,9 @@
 package timetableapp.domain;
 
+/**
+ * Sovelluslogiikasta vastaava luokka
+ */
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import timetableapp.dao.TimetableDao;
@@ -23,6 +27,15 @@ public class TimetableService {
         this.activeEvents = null;
         this.userTimetables = null;
     }
+    
+    /**
+    * uuden käyttäjän luominen
+    * 
+    * @param name käyttäjän nimi
+    * @param username käyttäjätunnus
+    * 
+    * @return true jos käyttäjätunnus on luotu onnistuneesti, muuten false
+    */
     
     public boolean createUser(String name, String username)  {   
         if (userDao.findByUsername(username) != null) {

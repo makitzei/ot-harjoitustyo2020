@@ -1,5 +1,9 @@
 package timetableapp.domain;
 
+/**
+ * Lukujärjestykseen lisättävää tapahtumaa edustava luokka
+ */
+
 import java.util.ArrayList;
 
 public class Event {
