@@ -1,10 +1,10 @@
 package timetableapp.domain;
 
+import java.util.ArrayList;
+
 /**
  * Lukujärjestykseen lisättävää tapahtumaa edustava luokka
  */
-
-import java.util.ArrayList;
 
 public class Event {
     private String subject;

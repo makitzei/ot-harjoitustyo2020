@@ -1,14 +1,14 @@
 package timetableapp.domain;
 
-/**
- * Sovelluslogiikasta vastaava luokka
- */
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import timetableapp.dao.TimetableDao;
 import timetableapp.dao.UserDao;
 import java.util.List;
+
+/**
+ * Sovelluslogiikasta vastaava luokka
+ */
 
 public class TimetableService {
     

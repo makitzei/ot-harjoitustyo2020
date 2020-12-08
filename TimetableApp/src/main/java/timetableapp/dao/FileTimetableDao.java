@@ -1,10 +1,5 @@
 package timetableapp.dao;
 
-/**
- * Lukujärjestykset ja niiden tapahtumat sisältävän tekstitiedoston käsittelystä
- * huolehtiva luokka
- */
-
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -14,17 +9,15 @@ import java.util.stream.Collectors;
 import timetableapp.domain.Event;
 import timetableapp.domain.Timetable;
 
+/**
+ * Lukujärjestykset ja niiden tapahtumat sisältävän tekstitiedoston käsittelystä
+ * huolehtiva luokka
+ */
+
 public class FileTimetableDao implements TimetableDao {
     
     private List<Timetable> timetables;
     private String file;
-    
-    /**
-    * Hakee tiedot tekstitiedostosta tai luo uuden tekstitiedoston, jos sitä ei vielä ole
-    * 
-    * @param    file    luettavan tai luotavan tiedoston nimi
-    * 
-    */
     
     public FileTimetableDao(String file) throws Exception {
         timetables = new ArrayList<>();

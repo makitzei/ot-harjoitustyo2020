@@ -1,11 +1,11 @@
 package timetableapp.domain;
 
+import timetableapp.domain.Timetable;
+import java.util.ArrayList;
+
 /**
  * Järjestelmän käyttäjää edustava luokka
  */
-
-import timetableapp.domain.Timetable;
-import java.util.ArrayList;
 
 public class User {
     private String realName;

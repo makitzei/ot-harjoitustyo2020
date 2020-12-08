@@ -1,9 +1,13 @@
 package timetableapp.dao;
 
-
 import java.util.List;
 import timetableapp.domain.Event;
 import timetableapp.domain.Timetable;
+
+/**
+ * Rajapinta Service-luokan ja tietokantatoteutuksen välille lukujärjestysten
+ * tallentamiseen
+ */
 
 public interface TimetableDao {
     

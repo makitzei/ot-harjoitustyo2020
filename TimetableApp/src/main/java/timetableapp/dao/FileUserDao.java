@@ -1,10 +1,5 @@
 package timetableapp.dao;
 
-/**
- * Käyttäjienn nimen ja käyttäjänimen sisältävän tekstitiedoston käsittelystä
- * huolehtiva luokka
- */
-
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -12,16 +7,14 @@ import java.util.List;
 import java.util.Scanner;
 import timetableapp.domain.User;
 
+/**
+ * Käyttäjienn nimen ja käyttäjänimen sisältävän tekstitiedoston käsittelystä
+ * huolehtiva luokka
+ */
+
 public class FileUserDao implements UserDao {
     private List<User> users;
     private String file;
-    
-    /**
-    * Hakee tiedot tekstitiedostosta tai luo uuden tekstitiedoston, jos sitä ei vielä ole
-    * 
-    * @param    file    luettavan tai luotavan tiedoston nimi
-    * 
-    */
     
     public FileUserDao(String file) throws Exception {
         users = new ArrayList<>();
