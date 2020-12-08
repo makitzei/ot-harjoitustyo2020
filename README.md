@@ -9,7 +9,8 @@ Sovelluksen käyttäjä voi tallentaa erilaisia tehtäviä koko viikon päivät 
 [Arkkitehtuurikuvaus](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/arkkitehtuuri.md)  
 
 ## Releaset
-[Viikko 5](https://github.com/makitzei/ot-harjoitustyo2020/releases)  
+[Viikko 5](https://github.com/makitzei/ot-harjoitustyo2020/releases/tag/viikko5)  
+[Viikko 6](https://github.com/makitzei/ot-harjoitustyo2020/releases/tag/viikko6)
 
 ## Komentorivitoiminnot
 ### Kloonaaminen
