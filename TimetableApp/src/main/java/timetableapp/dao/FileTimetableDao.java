@@ -27,9 +27,9 @@ public class FileTimetableDao implements TimetableDao {
             while (reader.hasNextLine()) {
                 String[] parts = reader.nextLine().split(";");
                 Timetable t = new Timetable(parts[0], Integer.parseInt(parts[1]));
-                for (int i = 2; i < parts.length; i = i+4) {
-                    Event event = new Event(parts[i], Integer.parseInt(parts[i+2]), 
-                            Integer.parseInt(parts[i+3]), parts[i+1]);
+                for (int i = 2; i < parts.length; i = i + 4) {
+                    Event event = new Event(parts[i], Integer.parseInt(parts[i + 2]), 
+                            Integer.parseInt(parts[i + 3]), parts[i + 1]);
                     t.addEvent(event);
                 }
                 timetables.add(t);
@@ -49,11 +49,11 @@ public class FileTimetableDao implements TimetableDao {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (Timetable timetable : timetables) {
                 String eventsString = "";
-                for (Event event : timetable.getEvents()){
-                    eventsString = eventsString + event.toString()+ ";";
+                for (Event event : timetable.getEvents()) {
+                    eventsString = eventsString + event.toString() + ";";
                 }
                 writer.write(timetable.getUser() + ";" + timetable.getWeek() 
-                        + ";" + eventsString +"\n");
+                        + ";" + eventsString + "\n");
             }
         }
     }

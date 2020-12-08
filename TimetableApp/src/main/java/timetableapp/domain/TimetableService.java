@@ -128,7 +128,7 @@ public class TimetableService {
     */
     
     public int getActivetableWeek() {
-        if(activeTable == null) {
+        if (activeTable == null) {
             return 0;
         }
         return activeTable.getWeek();     
