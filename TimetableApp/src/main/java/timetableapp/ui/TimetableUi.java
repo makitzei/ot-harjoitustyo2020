@@ -21,9 +21,10 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import timetableapp.dao.FileTimetableDao;
 import timetableapp.dao.FileUserDao;
@@ -157,17 +158,49 @@ public class TimetableUi extends Application {
         timetableGrid.add(saturday, 6, 0);
         timetableGrid.add(sunday, 7, 0);
         
+        // Empty timetable
         for (int x = 1; x <= 7; x++) {
             for (int y = 1; y <= 13; y++) {
-                Pane cell = new Pane();
-                cell.setPrefSize(100, 20);
-                cell.setBackground(new Background(new BackgroundFill(Color.BEIGE, CornerRadii.EMPTY, Insets.EMPTY)));
-                timetableGrid.add(cell, x, y);
+                Rectangle square = new Rectangle(150, 30, Color.BEIGE);
+                Label squareText = new Label("??");
+                StackPane stack = new StackPane();
+                stack.getChildren().addAll(square, squareText);
                 
-                //Label cell = new Label("");
-                //timetableGrid.add(cell, x, y);
+                timetableGrid.add(stack, x, y);
             }
         }
+        /*
+        //Check for events on first timetable
+        timetableService.setActivetable(1);
+        for (String event2 : timetableService.eventsToString()) {
+            String[] parts = event2.split(";");
+            Rectangle square2 = new Rectangle(150, 30, Color.DEEPPINK);
+            Label squareText2 = new Label(parts[0]);
+            int end2 = Integer.parseInt(parts[3]);
+            int y = Integer.parseInt(parts[2])-6;
+            int x =1;
+            String day2 = (parts[1]); 
+            switch (day2) {
+                case "maanantai": x = 1;
+                    break;
+                case "tiistai": x = 2;
+                    break;
+                case "keskiviikko": x = 3;
+                    break;
+                case "torstai": x = 4;
+                    break;
+                case "perjantai": x = 5;
+                    break;
+                case "lauantai": x = 6;
+                    break;
+                case "sunnuntai": x = 7;
+                    break;
+            }
+            StackPane stack2 = new StackPane();
+            stack2.getChildren().addAll(square2, squareText2);
+            timetableGrid.add(stack2, x, y);              
+        }
+*/
         
         for (int y = 1; y <= 13; y++) {
             int time = y+6;
@@ -180,7 +213,6 @@ public class TimetableUi extends Application {
         timetableGrid.setHgap(10);
         timetableGrid.setVgap(10);
         timetableGrid.setPadding(new Insets(20,20,20,50));
-        //timetableGrid.setGridLinesVisible(true);
         timetableLayout.setPadding(new Insets(50,100,100,100));
         
         timetableLayout.setTop(weekLayout);
@@ -378,51 +410,51 @@ public class TimetableUi extends Application {
             
         });
         
-        // 9.3 ComboBox timetable week
+        // 9.3 ComboBox timetable week set active timetable
         weekCombo.setOnAction((event) -> {
             int week = (int) weekCombo.getValue();
             timetableService.setActivetable(week);
-            // 9.3.1 Add events to timetable, won't work yet
-            /*
-            ArrayList<String> events = timetableService.eventsToString();
-            if (events != null) {
-                for (String eventString : events) {
-                    String[] parts = eventString.split(";");
-                    Label subjectLabel = new Label(parts[0]);
-                    int start = Integer.parseInt(parts[2]);
-                    int stop = Integer.parseInt(parts[3]);
-                    int dayCode = 0;
-                    String dayString = parts[1];
-                    if (dayString.equals("maanantai")) {
-                        dayCode = 1;
-                    }
-                    else if (dayString.equals("tiistai")) {
-                        dayCode = 2;
-                    }
-                    else if (dayString.equals("keskiviikko")) {
-                        dayCode = 3;
-                    }
-                    else if (dayString.equals("torstai")) {
-                        dayCode = 4;
-                    }
-                    else if (dayString.equals("perjantai")) {
-                        dayCode = 5;
-                    }
-                    else if (dayString.equals("lauantai")) {
-                        dayCode = 6;
-                    }
-                    else {
-                        dayCode = 7;
-                    }
-                    while (start < stop) {
-                        timetableGrid.add(subjectLabel, dayCode, start-6);
-                        start ++;
-                    }
-
-                }
-            }
-            */
             timetableTest.setText("Aktiivinen viikko on nyt " + String.valueOf(timetableService.getActivetableWeek()));
+            //Clear table - turhaa toistoa, tiedän!
+            for (int x = 1; x <= 7; x++) {
+                for (int y = 1; y <= 13; y++) {
+                    Rectangle square = new Rectangle(150, 30, Color.BEIGE);
+                    Label squareText = new Label("");
+                    StackPane stack = new StackPane();
+                    stack.getChildren().addAll(square, squareText);
+                
+                    timetableGrid.add(stack, x, y);
+            }
+        }        
+            //Check for events on timetable - turhaa toistoa, tiedän!
+            for (String event2 : timetableService.eventsToString()) {
+                String[] parts = event2.split(";");
+                Rectangle square2 = new Rectangle(150, 30, Color.DEEPPINK);
+                Label squareText2 = new Label(parts[0]);
+                int end2 = Integer.parseInt(parts[3]);
+                int y = Integer.parseInt(parts[2])-6;
+                int x =1;
+                String day2 = (parts[1]); 
+                switch (day2) {
+                    case "maanantai": x = 1;
+                        break;
+                    case "tiistai": x = 2;
+                        break;
+                    case "keskiviikko": x = 3;
+                        break;
+                    case "torstai": x = 4;
+                        break;
+                    case "perjantai": x = 5;
+                        break;
+                    case "lauantai": x = 6;
+                        break;
+                    case "sunnuntai": x = 7;
+                        break;
+                }
+                StackPane stack2 = new StackPane();
+                stack2.getChildren().addAll(square2, squareText2);
+                timetableGrid.add(stack2, x, y);
+            }
             window.setScene(sceneTimetable); 
         });
         

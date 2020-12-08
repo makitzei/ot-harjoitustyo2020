@@ -70,7 +70,7 @@ public class TimetableService {
         }
         
         userTimetables = timetableDao.findByUsername(username);
-        //this.setActivetable(1);
+        this.setActivetable(1);
         loggedIn = user;
          
         return true;
