@@ -21,4 +21,5 @@
 2.12. | 1 | sekvenssikaavio, dokumentaatiota
 7.12. | 9 | tapahtuman tallentaminen ja näyttäminen: onnistumisia ja epäonnistumisia, käyttöliittymän parantelua
 8.12 | 2 | javadocin opettelua, valmistelua ja siihen liittyvien vikojen etsintää
-yht. | 43,5 |
+8.12. | 5 | tapahtuman graafinen lisääminen lukujärjestykseen - 1. versio
+yht. | 48,5 |
