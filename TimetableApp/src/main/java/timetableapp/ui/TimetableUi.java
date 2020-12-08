@@ -5,8 +5,7 @@ package timetableapp.ui;
  */
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Set;
+import java.util.concurrent.TimeUnit;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -36,11 +35,11 @@ public class TimetableUi extends Application {
     
     @Override
     public void init() throws Exception {
-        //Luodaan tietokanta tai yhteys siihen
+        // Connection to database
         FileUserDao userDao = new FileUserDao("users.txt");
         FileTimetableDao timetableDao = new FileTimetableDao("timetables.txt");
 
-        // alustetaan sovelluslogiikka
+        // Apply application logic
         timetableService = new TimetableService(userDao, timetableDao);
     }
     
@@ -124,7 +123,7 @@ public class TimetableUi extends Application {
         weekCombo.setPromptText("1");
         Label timetableWeek = new Label("Viikko ");
         //Pieni testi
-        Label timetableTest = new Label("Testiviesti olen");
+        Label timetableTest = new Label("Testitulostelu"); // Test test
         //
         Label monday = new Label("maanantai");
         Label tuesday = new Label("tiistai");
@@ -197,9 +196,12 @@ public class TimetableUi extends Application {
         // 4.1 components
         Label subject = new Label("Aihe:");
         Label time = new Label("Aika:");
+        Label subjectAddLabel = new Label("Lisää uusi aihe:");
         Label newEventMessage = new Label("");
+        TextField subjectAddText = new TextField();
         Button newEventButton = new Button("Luo uusi");
         Button newEventReturn = new Button("Takaisin");
+        Button subjectAddButton = new Button("Lisää");
         
         ObservableList<String> subjects = 
             FXCollections.observableArrayList(
@@ -236,6 +238,13 @@ public class TimetableUi extends Application {
         // 4.2 layout
         BorderPane newEventLayout = new BorderPane();
         
+        HBox addSubjectLayout = new HBox();
+        addSubjectLayout.getChildren().add(subjectCombo);
+        addSubjectLayout.getChildren().add(subjectAddLabel);
+        addSubjectLayout.getChildren().add(subjectAddText);
+        addSubjectLayout.getChildren().add(subjectAddButton);
+        addSubjectLayout.setSpacing(10);
+             
         HBox tpLayout = new HBox();
         tpLayout.getChildren().add(startCombo);
         tpLayout.getChildren().add(new Label("-"));
@@ -246,7 +255,7 @@ public class TimetableUi extends Application {
         
         VBox newEventLayout2 = new VBox();
         newEventLayout2.getChildren().add(subject);
-        newEventLayout2.getChildren().add(subjectCombo);
+        newEventLayout2.getChildren().add(addSubjectLayout);
         newEventLayout2.getChildren().add(time);
         newEventLayout2.getChildren().add(tpLayout);
         newEventLayout2.getChildren().add(newEventButton);
@@ -297,6 +306,8 @@ public class TimetableUi extends Application {
         loginButton.setOnAction((event) -> {
             String username = loginUsername.getText();
             if (timetableService.login(username)) {
+                timetableService.setActivetable(1);
+                timetableTest.setText("Aktiivinen viikko on nyt " + String.valueOf(timetableService.getActivetableWeek()));
                 window.setScene(sceneTimetable);
                 loginUsername.setText("");
                 loginMessage.setText("");
@@ -329,7 +340,7 @@ public class TimetableUi extends Application {
                 newEventMessage.setText("Tarkista alku- ja loppuaika");
             }            
             else {
-                //Testitulostus vielä tässä vaiheessa
+                //Testitulostus mukana vielä tässä vaiheessa
                 newEventMessage.setText(subjectValue + " klo " + String.valueOf(startValue) 
                     + " - " + String.valueOf(stopValue) + " " + dayValue + "na");
                 timetableService.createEvent(subjectValue, startValue, stopValue, dayValue);
@@ -337,7 +348,7 @@ public class TimetableUi extends Application {
                 startCombo.setValue(null);
                 stopCombo.setValue(null);
                 dayCombo.setValue(null);
-            //window.setScene(sceneTimetable);    
+                //window.setScene(sceneTimetable);
             }
             
         });
@@ -349,6 +360,22 @@ public class TimetableUi extends Application {
             stopCombo.setValue(null);
             dayCombo.setValue(null);
             newEventMessage.setText("");
+        });
+        
+        subjectAddButton.setOnAction((event) -> {
+            String newSubject = subjectAddText.getText();
+            if (newSubject.isEmpty()) {
+                newEventMessage.setText("Uusi aihe ei voi olla tyhjä");
+            }
+            else if (newSubject.length() > 30){
+                newEventMessage.setText("Liian pitkä aihe");
+            }
+            else {
+                subjectCombo.getItems().add(newSubject);
+                newEventMessage.setText("Aihe lisätty");
+            }
+            subjectAddText.setText("");
+            
         });
         
         // 9.3 ComboBox timetable week
