@@ -1,5 +1,6 @@
 package timetableapp.dao;
 
+
 import java.util.List;
 import timetableapp.domain.Event;
 import timetableapp.domain.Timetable;

@@ -1,7 +1,7 @@
 package timetableapp.ui;
 
 /**
- * Lukujärjestyspohjaa edustava luokka
+ * Sovelluslogiikkaa edustava luokka
  */
 
 import java.util.ArrayList;

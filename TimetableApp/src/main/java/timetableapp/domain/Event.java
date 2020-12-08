@@ -50,21 +50,6 @@ public class Event {
     public void setDay(String day) {
         this.day = day;
     }
-    /*
-    public void startLater(int hours) {
-        int newStart = this.start + hours;
-        if (newStart < this.stop) {
-            this.start = newStart;
-        }
-    }
-    //Tässä on alustavana ylärajana lukkarin tämänhetkinen yläraja klo 19
-    public void stopLater(int hours) {
-        int newStop = this.stop + hours;
-        if (newStop < 20) {
-            this.stop = newStop;
-        }
-    }
-    */
     
     @Override
     public String toString() {

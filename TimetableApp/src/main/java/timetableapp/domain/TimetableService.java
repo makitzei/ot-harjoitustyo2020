@@ -29,12 +29,12 @@ public class TimetableService {
     }
     
     /**
-    * uuden käyttäjän luominen
+    * Uuden käyttäjän luominen
     * 
-    * @param name käyttäjän nimi
-    * @param username käyttäjätunnus
+    * @param    name   käyttäjän nimi
+    * @param    username   käyttäjätunnus
     * 
-    * @return true jos käyttäjätunnus on luotu onnistuneesti, muuten false
+    * @return   true jos käyttäjätunnus on luotu onnistuneesti, muuten false
     */
     
     public boolean createUser(String name, String username)  {   
@@ -54,6 +54,14 @@ public class TimetableService {
 
         return true;
     }
+    
+    /**
+    * Kirjautuminen sisään järjestelmään
+    * 
+    * @param    username   käyttäjätunnus
+    * 
+    * @return   true jos käyttäjätunnus löytyy tietokannasta ja kirjautuminen onnistuu, muuten false
+    */
      
     public boolean login(String username) {
         User user = userDao.findByUsername(username);
@@ -68,20 +76,42 @@ public class TimetableService {
         return true;
     }
     
+    /**
+    * Kirjautuminen ulos järjestelmästä
+    * 
+    */
+    
     public void logout() {
         loggedIn = null;
         activeTable = null;
         userTimetables = null;
     }
     
+    /**
+    * Haetaan käyttäjä joka on kirjautuneena järjestelmään
+    * 
+    * @return   käyttäjä User-oliona
+    */
+    
     public User getLoggedUser() {
         return loggedIn;
     }
+    
+    /**
+    * Haetaan lukujärjestys joka on tällä hetkellä tarkastelun alaisena tai käsittelyssä
+    * 
+    * @return   aktiivinen lukujärjestys Timetable-oliona
+    */
     
     public Timetable getActivetable() {
         return activeTable;
     }
     
+    /**
+    * Vaihdetaan aktiivinen lukujärjestys
+    * 
+    * @param    week    viikon numero, jonka lukujärjestystä halutaan tarkastella
+    */
     public void setActivetable(int week) {
         Timetable newActive = userTimetables.stream()
                 .filter(t->t.getWeek() == week)
@@ -91,6 +121,11 @@ public class TimetableService {
         this.activeTable = newActive;
         this.activeEvents = this.activeTable.getEvents();
     }
+    /**
+    * Palauttaa aktiivisen lukujärjestyksen viikon
+    * 
+    * @return   viikon numero, jos on olemassa, 0 jos aktiivinen lukujärjestys ei ole määritelty
+    */
     
     public int getActivetableWeek() {
         if(activeTable == null) {
@@ -98,6 +133,17 @@ public class TimetableService {
         }
         return activeTable.getWeek();     
     }
+    
+    /**
+    * Luodaan tapahtuma aktiivisena olevaan lukujärjestykseen
+    * 
+    * @param    subject     tapahtuman aihe
+    * @param    start       tapahtuman aloitusaika
+    * @param    stop        lopetusaika
+    * @param    day         tapahtuman viikonpäivä
+    * 
+    * @return   true jos tapahtuman luominen onnistuu, false jos ei
+    */
     
     public boolean createEvent(String subject, int start, int stop, String day) {
         Event event = new Event(subject, start, stop, day);
@@ -108,6 +154,12 @@ public class TimetableService {
         }
         return true;    
     }
+    
+    /**
+    * Palauttaa aktiivisen lukujärjestyksen tapahtumat listana String-olioita
+    * 
+    * @return   tapahtumat listana, joka muodostuu tapahtumien toString-esityksistä
+    */
     
     public ArrayList<String> eventsToString() {
         ArrayList events = new ArrayList<>();

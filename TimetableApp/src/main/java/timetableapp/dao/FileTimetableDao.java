@@ -1,5 +1,10 @@
 package timetableapp.dao;
 
+/**
+ * Lukujärjestykset ja niiden tapahtumat sisältävän tekstitiedoston käsittelystä
+ * huolehtiva luokka
+ */
+
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -12,8 +17,14 @@ import timetableapp.domain.Timetable;
 public class FileTimetableDao implements TimetableDao {
     
     private List<Timetable> timetables;
-    //private List<Event> events;
     private String file;
+    
+    /**
+    * Hakee tiedot tekstitiedostosta tai luo uuden tekstitiedoston, jos sitä ei vielä ole
+    * 
+    * @param    file    luettavan tai luotavan tiedoston nimi
+    * 
+    */
     
     public FileTimetableDao(String file) throws Exception {
         timetables = new ArrayList<>();
@@ -36,6 +47,11 @@ public class FileTimetableDao implements TimetableDao {
         }
     }
     
+    /**
+    * Tallentaa lukujärjestyksen ja siihen lisätyt tapahtumat tekstitiedostoon
+    * 
+    */
+    
     private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (Timetable timetable : timetables) {
@@ -47,7 +63,14 @@ public class FileTimetableDao implements TimetableDao {
                         + ";" + eventsString +"\n");
             }
         }
-    }    
+    }
+    
+    /**
+    * Luo uuden lukujärjestyksen
+    * 
+    * @return   uusi lukujärjestys
+    * 
+    */
 
     @Override
     public Timetable create(Timetable timetable) throws Exception {
@@ -55,11 +78,27 @@ public class FileTimetableDao implements TimetableDao {
         save();
         return timetable;
     }
+    
+    /**
+    * Palauttaa kaikki tekstitietokannan lukujärjestykset
+    * 
+    * @return   lista lukujärjestyksistä Timetable-olioina
+    * 
+    */
 
     @Override
     public List<Timetable> getAll() {
         return timetables;
     }
+    
+    /**
+    * Palauttaa tiettyyn viikkoon liittyvän lukujärjestyksen
+    * 
+    * @param    week    viikko, jonka lukujärjestys halutaan löytää
+    * 
+    * @return   löydetty lukujärjestys, jos on, muuten null
+    * 
+    */
     
     @Override
     public Timetable findByWeek(int week) {
@@ -69,6 +108,15 @@ public class FileTimetableDao implements TimetableDao {
             .orElse(null);
     }
     
+    /**
+    * Etsii kaikki tiettyyn käyttäjään liittyvät lukujärjestykset
+    * 
+    * @param    username    käyttäjän nimimerkki 
+    * 
+    * @return   lista tietyn käyttäjän lukujärjestyksiä
+    * 
+    */
+    
     @Override
     public List<Timetable> findByUsername(String username) {
         List<Timetable> result = timetables.stream()
@@ -76,6 +124,16 @@ public class FileTimetableDao implements TimetableDao {
             .collect(Collectors.toList());
         return result;
     }
+    
+    /**
+    * Luo ja tallentaa uuden tapahtuman tiettyyn lukujärjestykseen
+    * 
+    * @param    event  listättävä tapahtuma
+    * @param    timetable  lukujärjestys, johon tapahtuma lisätään
+    * 
+    * @return   uusi tapahtuma
+    * 
+    */
 
     @Override
     public Event createEvent(Event event, Timetable timetable) throws Exception {

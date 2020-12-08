@@ -1,5 +1,9 @@
 package timetableapp.domain;
 
+/**
+ * Lukujärjestyspohjaa edustava luokka
+ */
+
 import timetableapp.domain.Event;
 import java.util.ArrayList;
 
