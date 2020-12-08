@@ -20,4 +20,5 @@
 2.12. | 1,5 | ensimmäinen release, dokumentaatiota  
 2.12. | 1 | sekvenssikaavio, dokumentaatiota
 7.12. | 9 | tapahtuman tallentaminen ja näyttäminen: onnistumisia ja epäonnistumisia, käyttöliittymän parantelua
-yht. | 41,5 |
+8.12 | 2 | javadocin opettelua, valmistelua ja siihen liittyvien vikojen etsintää
+yht. | 43,5 |
