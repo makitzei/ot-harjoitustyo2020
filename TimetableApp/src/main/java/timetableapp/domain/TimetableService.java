@@ -146,13 +146,15 @@ public class TimetableService {
     */
     
     public boolean createEvent(String subject, int start, int stop, String day) {
-        Event event = new Event(subject, start, stop, day);
-        try {
-            timetableDao.createEvent(event, activeTable);
-        } catch (Exception e) {
-            return false;
+        for (int i = start; i< stop; i ++) {
+            Event event = new Event(subject, i, i+1, day);
+            try {
+                timetableDao.createEvent(event, activeTable);
+            } catch (Exception e) {
+                return false;
+            }
         }
-        return true;    
+        return true;
     }
     
     /**

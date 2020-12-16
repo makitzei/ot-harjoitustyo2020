@@ -5,6 +5,7 @@ package timetableapp.ui;
  */
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -121,7 +122,7 @@ public class TimetableUi extends Application {
         }
         ObservableList<Integer> weeks = FXCollections.observableArrayList(weekList);
         ComboBox weekCombo = new ComboBox(weeks);
-        weekCombo.setPromptText("1");
+        weekCombo.setPromptText(":)");
         Label timetableWeek = new Label("Viikko ");
         //Pieni testi
         Label timetableTest = new Label("Testitulostelu"); // Test test
@@ -162,45 +163,13 @@ public class TimetableUi extends Application {
         for (int x = 1; x <= 7; x++) {
             for (int y = 1; y <= 13; y++) {
                 Rectangle square = new Rectangle(150, 30, Color.BEIGE);
-                Label squareText = new Label("??");
+                Label squareText = new Label("Tervetuloa!");
                 StackPane stack = new StackPane();
                 stack.getChildren().addAll(square, squareText);
                 
                 timetableGrid.add(stack, x, y);
             }
         }
-        /*
-        //Check for events on first timetable
-        timetableService.setActivetable(1);
-        for (String event2 : timetableService.eventsToString()) {
-            String[] parts = event2.split(";");
-            Rectangle square2 = new Rectangle(150, 30, Color.DEEPPINK);
-            Label squareText2 = new Label(parts[0]);
-            int end2 = Integer.parseInt(parts[3]);
-            int y = Integer.parseInt(parts[2])-6;
-            int x =1;
-            String day2 = (parts[1]); 
-            switch (day2) {
-                case "maanantai": x = 1;
-                    break;
-                case "tiistai": x = 2;
-                    break;
-                case "keskiviikko": x = 3;
-                    break;
-                case "torstai": x = 4;
-                    break;
-                case "perjantai": x = 5;
-                    break;
-                case "lauantai": x = 6;
-                    break;
-                case "sunnuntai": x = 7;
-                    break;
-            }
-            StackPane stack2 = new StackPane();
-            stack2.getChildren().addAll(square2, squareText2);
-            timetableGrid.add(stack2, x, y);              
-        }
-*/
         
         for (int y = 1; y <= 13; y++) {
             int time = y+6;
@@ -339,7 +308,7 @@ public class TimetableUi extends Application {
             String username = loginUsername.getText();
             if (timetableService.login(username)) {
                 timetableService.setActivetable(1);
-                timetableTest.setText("Aktiivinen viikko on nyt " + String.valueOf(timetableService.getActivetableWeek()));
+                timetableTest.setText("  Valitse viikko päivittääksesi lukujärjestyksen.");
                 window.setScene(sceneTimetable);
                 loginUsername.setText("");
                 loginMessage.setText("");
@@ -373,7 +342,7 @@ public class TimetableUi extends Application {
             }            
             else {
                 //Testitulostus mukana vielä tässä vaiheessa
-                newEventMessage.setText(subjectValue + " klo " + String.valueOf(startValue) 
+                newEventMessage.setText("Lisätty " + subjectValue + " klo " + String.valueOf(startValue) 
                     + " - " + String.valueOf(stopValue) + " " + dayValue + "na");
                 timetableService.createEvent(subjectValue, startValue, stopValue, dayValue);
                 subjectCombo.setValue(null);
@@ -386,6 +355,7 @@ public class TimetableUi extends Application {
         });
         
         newEventReturn.setOnAction((event) -> {
+            weekCombo.setPromptText(":)");
             window.setScene(sceneTimetable);
             subjectCombo.setValue(null);
             startCombo.setValue(null);
@@ -414,8 +384,8 @@ public class TimetableUi extends Application {
         weekCombo.setOnAction((event) -> {
             int week = (int) weekCombo.getValue();
             timetableService.setActivetable(week);
-            timetableTest.setText("Aktiivinen viikko on nyt " + String.valueOf(timetableService.getActivetableWeek()));
-            //Clear table - turhaa toistoa, tiedän!
+            //timetableTest.setText("Aktiivinen viikko on nyt " + String.valueOf(timetableService.getActivetableWeek()));
+            //Clear table first
             for (int x = 1; x <= 7; x++) {
                 for (int y = 1; y <= 13; y++) {
                     Rectangle square = new Rectangle(150, 30, Color.BEIGE);
@@ -426,10 +396,20 @@ public class TimetableUi extends Application {
                     timetableGrid.add(stack, x, y);
             }
         }        
-            //Check for events on timetable - turhaa toistoa, tiedän!
+            //Check for events on timetable
             for (String event2 : timetableService.eventsToString()) {
                 String[] parts = event2.split(";");
-                Rectangle square2 = new Rectangle(150, 30, Color.DEEPPINK);
+                //Random rand = new Random();
+                Rectangle square2 = new Rectangle(150, 30);
+                if (parts[0].equals("opiskelu")) {
+                    square2.setFill(Color.PINK);
+                } else if (parts[0].equals("liikunta")) {
+                    square2.setFill(Color.SKYBLUE);
+                } else if (parts[0].equals("vapaa")) {
+                    square2.setFill(Color.OLIVEDRAB);;
+                } else {
+                    square2.setFill(Color.GOLD);;
+                }  
                 Label squareText2 = new Label(parts[0]);
                 int end2 = Integer.parseInt(parts[3]);
                 int y = Integer.parseInt(parts[2])-6;
