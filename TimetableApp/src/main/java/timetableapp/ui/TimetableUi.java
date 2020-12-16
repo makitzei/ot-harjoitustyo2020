@@ -127,8 +127,8 @@ public class TimetableUi extends Application {
         ComboBox weekCombo = new ComboBox(weeks);
         weekCombo.setPromptText(":)");
         Label timetableWeek = new Label("Viikko ");
-        //Pieni testi
         Label timetableTest = new Label("Testitulostelu"); // Test test
+        Button refresh = new Button("Päivitä");
         //
         Label monday = new Label("maanantai");
         Label tuesday = new Label("tiistai");
@@ -147,6 +147,7 @@ public class TimetableUi extends Application {
         weekLayout.getChildren().add(timetableWeek);
         weekLayout.getChildren().add(weekCombo);
         weekLayout.getChildren().add(timetableTest);
+        weekLayout.getChildren().add(refresh);
         
         HBox timeButtonLayout = new HBox();
         timeButtonLayout.getChildren().add(timetableNewButton);
@@ -315,7 +316,7 @@ public class TimetableUi extends Application {
             String username = loginUsername.getText();
             if (timetableService.login(username)) {
                 timetableService.setActivetable(1);
-                timetableTest.setText("  Valitse viikko päivittääksesi lukujärjestyksen");
+                timetableTest.setText("        ");
                 window.setScene(sceneTimetable);
                 loginUsername.setText("");
                 loginMessage.setText("");
@@ -331,6 +332,8 @@ public class TimetableUi extends Application {
         });
         
         // 9.3 Buttons timetable - new event
+        
+        
         timetableNewButton.setOnAction((event) -> {           
             window.setScene(sceneNewEvent);
         });
@@ -365,8 +368,8 @@ public class TimetableUi extends Application {
         });
         
         newEventReturn.setOnAction((event) -> {
-            weekCombo.setPromptText(":)");
             window.setScene(sceneTimetable);
+            weekCombo.fireEvent(event);
             subjectCombo.setValue(null);
             startCombo.setValue(null);
             stopCombo.setValue(null);
@@ -474,6 +477,12 @@ public class TimetableUi extends Application {
                 });
             }
             window.setScene(sceneTimetable); 
+        });
+        
+        // 9.4 Refresh button
+        refresh.setOnAction((event) -> {
+            weekCombo.fireEvent(event);
+            window.setScene(sceneTimetable);   
         });
            
         // 10. App start
