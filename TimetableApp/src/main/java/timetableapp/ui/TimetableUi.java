@@ -5,9 +5,11 @@ package timetableapp.ui;
  */
 
 import java.util.ArrayList;
+import java.util.List;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -441,17 +443,35 @@ public class TimetableUi extends Application {
                     case "sunnuntai": x = 7;
                         break;
                 }
-                // Actions for event tiles - popup window action
-                square2.setOnMouseClicked(new EventHandler<MouseEvent>() {
-                    @Override
-                    public void handle(MouseEvent t) {
-                        displayPopup(); 
-                    }
-                });
                 
                 StackPane stack2 = new StackPane();
                 stack2.getChildren().addAll(square2, squareText2);
                 timetableGrid.add(stack2, x, y);
+                
+                // Actions for event tiles - popup window action
+                stack2.setOnMouseClicked((MouseEvent t) -> {
+                    int x1 = GridPane.getColumnIndex(stack2);
+                    int y1 = GridPane.getRowIndex(stack2);
+                    int popStart = y1 + 6;
+                    String popDay = "";
+                    switch (x1) {
+                        case 1: popDay = "maanantai";
+                            break;
+                        case 2: popDay = "tiistai";
+                            break;
+                        case 3: popDay = "keskiviikko";
+                            break;
+                        case 4: popDay = "torstai";
+                            break;
+                        case 5: popDay = "perjantai";
+                            break;
+                        case 6: popDay = "lauantai";
+                            break;
+                        case 7: popDay = "sunnuntai";
+                            break;
+                    }
+                    displayPopup(popDay, popStart);
+                });
             }
             window.setScene(sceneTimetable); 
         });
@@ -464,17 +484,23 @@ public class TimetableUi extends Application {
     
       // 5. Popup window on mouse-click on timetable event
         
-    public static void displayPopup() {
+    public void displayPopup(String popDay, int popStart) {
         // 5.1 Components
         Stage popupWindow = new Stage();
         popupWindow.setTitle("Poista tapahtuma");
-        
-        Label popupLabel = new Label("Haluatko poistaa tapahtuman?");
+        Label popupLabel = new Label("Haluatko poistaa tapahtuman " + popDay + "na kello " + popStart + "?");
         Button popupYes = new Button("Poista tapahtuma");
         Button popupNo = new Button("Peruuta");
         
         // 5.2 Actions
         popupNo.setOnAction(e -> popupWindow.close());
+        popupYes.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                timetableService.deleteEvent(popDay, popStart);
+                popupWindow.close();
+            }
+        });
         
         // 5.3 Popup layout and scene
         HBox popButtonsLayout = new HBox();

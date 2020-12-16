@@ -121,6 +121,7 @@ public class TimetableService {
         this.activeTable = newActive;
         this.activeEvents = this.activeTable.getEvents();
     }
+    
     /**
     * Palauttaa aktiivisen lukujärjestyksen viikon
     * 
@@ -133,6 +134,16 @@ public class TimetableService {
         }
         return activeTable.getWeek();     
     }
+    
+    /**
+    * Tarkistaa, onko lukujärjestyksessä jo tapahtumia annettuna aikana
+    * 
+    * @param    start   luotavan tapahtuman alkamisaika
+    * @param    stop    tapahtuman loppumisaika
+    * @param    day     tapahtuman viikonpäivä
+    * 
+    * @return   false, jos päällekkäisiä tapahtumia ei ole, muuten true
+    */
     
     public boolean checkEventConflicts(int start, int stop, String day) {
         for (Event event : this.activeEvents) {
@@ -164,6 +175,23 @@ public class TimetableService {
             } catch (Exception e) {
                 return false;
             }
+        }
+        return true;
+    }
+    
+    public boolean deleteEvent(String day, int start) {
+        int index = 0;
+        for (Event event : this.activeEvents) {
+            if (event.getDay().equals(day) && event.getStart() == start) {
+                try {
+                    timetableDao.deleteEvent(index, activeTable);
+                    return true;
+                } catch (Exception e) {
+                    return false;
+                }
+            } else {
+                index++;
+            }     
         }
         return true;
     }

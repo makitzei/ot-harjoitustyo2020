@@ -34,6 +34,10 @@ public class Timetable {
         this.events.add(event);
     }
     
+    public void deleteEvent(int index) {
+        this.events.remove(index);
+    }
+    
     @Override
     public String toString() {
         return "Timetable week " + this.week + " has " 

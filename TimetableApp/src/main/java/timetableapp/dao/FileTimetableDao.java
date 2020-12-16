@@ -61,7 +61,10 @@ public class FileTimetableDao implements TimetableDao {
     /**
     * Luo uuden lukujärjestyksen
     * 
+    * @param    timetable   uusi luotava lukujärjestys Timetable-oliona
+    * 
     * @return   uusi lukujärjestys
+     * @throws java.lang.Exception
     * 
     */
 
@@ -125,12 +128,21 @@ public class FileTimetableDao implements TimetableDao {
     * @param    timetable  lukujärjestys, johon tapahtuma lisätään
     * 
     * @return   uusi tapahtuma
+     * @throws java.lang.Exception
     * 
     */
 
     @Override
     public Event createEvent(Event event, Timetable timetable) throws Exception {
         timetable.addEvent(event);
+        save();
+        return event;
+    }
+
+    @Override
+    public Event deleteEvent(int index, Timetable timetable) throws Exception {
+        Event event = timetable.getEvents().get(index);
+        timetable.deleteEvent(index);
         save();
         return event;
     }

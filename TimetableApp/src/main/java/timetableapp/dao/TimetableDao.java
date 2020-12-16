@@ -21,5 +21,6 @@ public interface TimetableDao {
     
     Event createEvent(Event event, Timetable timetable) throws Exception;
     
-    
+    Event deleteEvent(int index, Timetable timetable) throws Exception;
+       
 }
