@@ -23,4 +23,5 @@
 8.12 | 2 | javadocin opettelua, valmistelua ja siihen liittyvien vikojen etsintää
 8.12. | 5 | tapahtuman graafinen lisääminen lukujärjestykseen - 1. kehnohko versio
 8.12. | 1 | dokumentaatio
-yht. | 49,5 |
+16.12. | 8 | käyttöliittymän ja toimintojen parantelu
+yht. | 57,5 |
