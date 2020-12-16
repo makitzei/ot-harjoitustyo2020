@@ -5,17 +5,18 @@ package timetableapp.ui;
  */
 
 import java.util.ArrayList;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
@@ -163,6 +164,8 @@ public class TimetableUi extends Application {
         for (int x = 1; x <= 7; x++) {
             for (int y = 1; y <= 13; y++) {
                 Rectangle square = new Rectangle(150, 30, Color.BEIGE);
+                //square.setArcHeight(10.0d); 
+                //square.setArcWidth(10.0d);
                 Label squareText = new Label("Tervetuloa!");
                 StackPane stack = new StackPane();
                 stack.getChildren().addAll(square, squareText);
@@ -272,7 +275,9 @@ public class TimetableUi extends Application {
         // 4.4 set scene
         Scene sceneNewEvent = new Scene(newEventLayout);
         
-        //5. - 8. Room for something else :)
+        // 5 Popup window method further down
+        
+        //6. - 8. Room for something else :)
         
         // 9. Actions
         
@@ -308,7 +313,7 @@ public class TimetableUi extends Application {
             String username = loginUsername.getText();
             if (timetableService.login(username)) {
                 timetableService.setActivetable(1);
-                timetableTest.setText("  Valitse viikko päivittääksesi lukujärjestyksen.");
+                timetableTest.setText("  Valitse viikko päivittääksesi lukujärjestyksen");
                 window.setScene(sceneTimetable);
                 loginUsername.setText("");
                 loginMessage.setText("");
@@ -341,7 +346,7 @@ public class TimetableUi extends Application {
                 newEventMessage.setText("Tarkista alku- ja loppuaika");
             }            
             else {
-                //Testitulostus mukana vielä tässä vaiheessa
+                //Print added event
                 newEventMessage.setText("Lisätty " + subjectValue + " klo " + String.valueOf(startValue) 
                     + " - " + String.valueOf(stopValue) + " " + dayValue + "na");
                 timetableService.createEvent(subjectValue, startValue, stopValue, dayValue);
@@ -349,7 +354,6 @@ public class TimetableUi extends Application {
                 startCombo.setValue(null);
                 stopCombo.setValue(null);
                 dayCombo.setValue(null);
-                //window.setScene(sceneTimetable);
             }
             
         });
@@ -369,7 +373,7 @@ public class TimetableUi extends Application {
             if (newSubject.isEmpty()) {
                 newEventMessage.setText("Uusi aihe ei voi olla tyhjä");
             }
-            else if (newSubject.length() > 30){
+            else if (newSubject.length() > 15) {
                 newEventMessage.setText("Liian pitkä aihe");
             }
             else {
@@ -384,11 +388,12 @@ public class TimetableUi extends Application {
         weekCombo.setOnAction((event) -> {
             int week = (int) weekCombo.getValue();
             timetableService.setActivetable(week);
-            //timetableTest.setText("Aktiivinen viikko on nyt " + String.valueOf(timetableService.getActivetableWeek()));
             //Clear table first
             for (int x = 1; x <= 7; x++) {
                 for (int y = 1; y <= 13; y++) {
                     Rectangle square = new Rectangle(150, 30, Color.BEIGE);
+                    //square.setArcHeight(10.0d); 
+                    //square.setArcWidth(10.0d); 
                     Label squareText = new Label("");
                     StackPane stack = new StackPane();
                     stack.getChildren().addAll(square, squareText);
@@ -399,8 +404,9 @@ public class TimetableUi extends Application {
             //Check for events on timetable
             for (String event2 : timetableService.eventsToString()) {
                 String[] parts = event2.split(";");
-                //Random rand = new Random();
                 Rectangle square2 = new Rectangle(150, 30);
+                //square2.setArcHeight(10.0d); 
+                //square2.setArcWidth(10.0d);
                 if (parts[0].equals("opiskelu")) {
                     square2.setFill(Color.PINK);
                 } else if (parts[0].equals("liikunta")) {
@@ -431,19 +437,59 @@ public class TimetableUi extends Application {
                     case "sunnuntai": x = 7;
                         break;
                 }
+                // Actions for event tiles - popup window action
+                square2.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent t) {
+                        displayPopup(); 
+                    }
+                });
+                
                 StackPane stack2 = new StackPane();
                 stack2.getChildren().addAll(square2, squareText2);
                 timetableGrid.add(stack2, x, y);
             }
             window.setScene(sceneTimetable); 
         });
-        
+           
         // 10. App start
         window.setScene(sceneLogin);
         window.setTitle("Lukujärjestys");
         window.show();
-    }   
-
+    }
+    
+      // 5. Popup window on mouse-click on timetable event
+        
+    public static void displayPopup() {
+        // 5.1 Components
+        Stage popupWindow = new Stage();
+        popupWindow.setTitle("Poista tapahtuma");
+        
+        Label popupLabel = new Label("Haluatko poistaa tapahtuman?");
+        Button popupYes = new Button("Poista tapahtuma");
+        Button popupNo = new Button("Peruuta");
+        
+        // 5.2 Actions
+        popupNo.setOnAction(e -> popupWindow.close());
+        
+        // 5.3 Popup layout and scene
+        HBox popButtonsLayout = new HBox();
+        popButtonsLayout.getChildren().addAll(popupYes, popupNo);
+        popButtonsLayout.setSpacing(10);
+        
+        VBox popAllLayout = new VBox();
+        popAllLayout.getChildren().addAll(popupLabel, popButtonsLayout);
+        popAllLayout.setSpacing(20);
+        popAllLayout.setAlignment(Pos.CENTER);
+        popAllLayout.setPadding(new Insets(50,100,100,100));
+        
+        Scene popScene = new Scene(popAllLayout);
+        
+        popupWindow.setScene(popScene);
+        popupWindow.showAndWait();
+       
+    }
+        
     public static void main(String[] args) {
         launch(TimetableUi.class);
     }
