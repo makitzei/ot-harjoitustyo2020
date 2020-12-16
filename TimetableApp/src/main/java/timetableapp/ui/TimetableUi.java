@@ -344,7 +344,11 @@ public class TimetableUi extends Application {
             }
             else if (stopValue <= startValue) {
                 newEventMessage.setText("Tarkista alku- ja loppuaika");
-            }            
+            }
+            
+            else if (timetableService.checkEventConflicts(startValue, stopValue, dayValue)) {
+                newEventMessage.setText("Konflikti: tapahtumat päällekkäin");
+            }
             else {
                 //Print added event
                 newEventMessage.setText("Lisätty " + subjectValue + " klo " + String.valueOf(startValue) 

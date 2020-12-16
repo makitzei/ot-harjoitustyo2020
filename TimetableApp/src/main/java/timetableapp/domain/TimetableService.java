@@ -134,6 +134,17 @@ public class TimetableService {
         return activeTable.getWeek();     
     }
     
+    public boolean checkEventConflicts(int start, int stop, String day) {
+        for (Event event : this.activeEvents) {
+            if (day.equals(event.getDay())) {
+                if (start == event.getStart() || stop == event.getStop()) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    
     /**
     * Luodaan tapahtuma aktiivisena olevaan lukujärjestykseen
     * 
