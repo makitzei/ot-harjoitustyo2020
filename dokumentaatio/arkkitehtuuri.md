@@ -1,7 +1,7 @@
 # Arkkitehtuurikuvaus
 
 ## Rakenne
-Ohjelma noudattaa kolmitasoista kerrosarkkitehtuuria, jonka pakkausrakenne on seuraava:  
+Ohjelma noudattaa kerrosarkkitehtuuria, jonka pakkausrakenne on seuraava:  
 
 ![paketit](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/kuvat/paketit.png)  
 
@@ -35,14 +35,14 @@ makitzei;2;vapaa;tiistai;10;11;
 makitzei;3;
 ...
 makitzei;52;
-iiris;1;juoksu;torstai;11;12;juoksu;torstai;12;13;opiskelu;9;10;opiskelu;maanantai;10;11;
+iiris;1;juoksu;torstai;11;12;juoksu;torstai;12;13;opiskelu;maanantai;8;9;opiskelu;maanantai;9;10;
 iiris;2;liikunta;perjantai;14;15;
 iiris;3;
 ...
 iiris;52;jouluostokset;sunnuntai;13;14;jouluostokset;sunnuntai;14;15;jouluostokset;sunnuntai;15;16;jouluostokset;sunnuntai;16;17;
 
 ```
-Muun ohjelman toiminnan jouhevoittamiseksi tapahtumat tallentuvat tiedostoon tunnin pätkissä. Esimerkiksi *iiris*-käyttäjän jouluostokset edellisessä esimerkissä on alun perin luotu *Event*-oliona, jonka kesto on 13-17, mutta tiedostoon tallennettaessa *TimetableService* pilkkoo tapahtuman tunnin pätkiksi. Tämä mahdollistaa tapahtumien näyttämisen oikein lukujärjestyksessä sekä yksittäisten tuntien tapahtumien poistamisen.
+Muun ohjelman toiminnan jouhevoittamiseksi tapahtumat tallentuvat tiedostoon tunnin pätkissä. Esimerkiksi *iiris*-käyttäjän jouluostokset edellisessä esimerkissä on alun perin luotu *Event*-oliona, jonka kesto on 13-17, mutta tiedostoon tallennettaessa *TimetableService* pilkkoo tapahtuman tunnin mittaisiksi tapahtumiksi. Tämä mahdollistaa tapahtumien näyttämisen oikein lukujärjestyksessä sekä yksittäisten tuntien tapahtumien poistamisen.
 
 ## Toiminnallisuuksia
 Uuden käyttäjän luomisnäkymässä voi edetä, kun käyttäjätunnus ei ole vielä ennestään käytössä ja kun käyttäjätunnus tai oikea nimi ovat tarpeeksi pitkiä merkkijonoja. Painamalla nappia *createUserButton* kontrolli etenee kuvatulla tavalla:  
@@ -53,4 +53,4 @@ Tapahtumakäsittelijä käyttöliittymässä kutsuu sovelluslogiikan *timetableS
 ## Tunnettuja heikkouksia
 
 * käyttöliittymä on turhan pitkä ja monimutkainen ja sitä voisi selkeyttää eriyttämällä toimintaa luokiksi ja metodeiksi
-* lukujärjestysnäkymä ei päivity automaattisesti tapahtuman luomisen jälkeen, sillä poistamisominaisuus luodaan lukujärjstyksen tapahtumatiiliin viikon vaihtamisen toiminnallisuuden sisällä
+* lukujärjestysnäkymä ei päivity automaattisesti tapahtuman luomisen jälkeen, sillä poistamisominaisuus luodaan lukujärjestyksen tapahtumatiiliin viikon vaihtamisen toiminnallisuuden sisällä
