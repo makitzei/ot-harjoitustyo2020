@@ -10,27 +10,27 @@ Sovelluksen avulla käyttäjät voivat tehdä itselleen viikkokohtaisia lukujär
 
 Sovelluksen eri näkymät ovat kirjautumis- ja rekisteröitymisnäkymä, lukujärjestyksen katselunäkymä ja uuden lukujärjestykseen laitettavan tehtävän/aiheen lisääminen.
 
-## Toiminnallisuudet (tehdyt merkattu täpällä alkuun)
+## Toiminnallisuudet lopullisessa versiossa
 
 ### Ennen kirjautumista
-- [x] käyttäjä voi luoda uuden käyttäjätunnuksen (viikko 4)
-- [x] kun uusi käyttäjätunnus luodaan, alustetaan tietokantaan (tekstitiedosto *timetables.txt*) pohja käyttäjän koko vuoden lukujärjestyksille (viikko 5)
-- [x] käyttäjä voi kirjautua järjestelmään (viikko 4)
+- käyttäjä voi luoda uuden käyttäjätunnuksen
+- kun uusi käyttäjätunnus luodaan, alustetaan tietokantaan pohja käyttäjän koko vuoden lukujärjestyksille
+- käyttäjä voi kirjautua järjestelmään
 
 ### Kirjautumisen jälkeen
-- [x] alkuversio: Käyttäjä näkee aluksi viikon 1 lukujärjestyspohjan ja voi selailla eri pohjia pudotusvalikosta. Tapahtumat eivät vielä näy pohjassa. (viikko 6)
-- [ ] käyttäjä näkee aluksi tämän viikon oman lukujärjestyksensä
-- [x] käyttäjä voi selata pudotusvalikosta menneiden ja tulevien viikkojen lukujärjestyksiään (viikko 6)
-- [x] käyttäjä voi lisätä nykyiseen tai tuleviin lukujärjestyksiinsä lisää tehtäviä (viikko 6)
-- [ ] käyttäjä voi poistaa tapahtumia 
-- [x] alkuversio tapahtuman luomisesta: käyttäjä voi valita tapahtuman valmiista listasta ja asettaa sille tapahtuma-ajan, minkä jälkeen tapahtuman tiedot tulostuvat tapahtuman luomisnäkymään (viikko 5)
-- [x] parempi versio tapahtuman luomisesta: tapahtuman tiedot tallentuvat myös tietokantaan (viikko 6)
-- [x] käyttäjä voi kirjautua ulos järjestelmästä (viikko 4)
+- käyttäjä näkee aluksi viikon 1 lukujärjestyksensä
+- käyttäjä voi selata pudotusvalikosta muiden viikkojen lukujärjestyksiä
+- käyttäjä voi lisätä katseltavana olevaan lukujärjestykseen tapahtumia
+- tapahtumille voi keksiä myös omia aiheita
+- käyttäjä voi poistaa tapahtumia klikkaamalla niitä lukujärjestyksessä
+- käyttäjä voi kirjautua ulos järjestelmästä
+- lukujärjestysten tiedot tallentuvat myös seuraavia käyttökertoja varten
 
 ## Jatkokehitysideoita
 
 Sovellusta on mahdollista laajentaa esimerkiksi seuraavilla tavoilla:
 
 * käyttäjä voi katsoa lisätietoa tehtävästä siirtämällä kursorin lukujärjestyksen tehtävän kohdalle
-* Käyttäjä voi valita jonkin valmiista tehtävistä ja myös käyttäjän itse lisäämät tehtävät lisätään oletustehtävävalikkoon
-* Lukujärjestyksen tehtävien muokkaaminen
+* lukujärjestyksen tehtäviä voisi myös muokata, ei vain poistaa
+* sisäänkirjautumisvaiheessa käyttäjälle voitaisiin näyttää ensimmäisenä ajankohtainen, meneillään olevan viikon lukujärjestys
+* myös käyttäjän itse laatimat aiheet voisi tallentaa tulevaa varten käyttäjäkohtaisesti
