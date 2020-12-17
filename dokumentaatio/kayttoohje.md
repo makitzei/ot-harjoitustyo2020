@@ -23,7 +23,7 @@ Uusi käyttäjä voi rekisteröityä syöttämällä oikean nimensä ja uuden k�
 ## Lukujärjestysten katselu
 Käyttäjän kirjautuessa onnistuneesti aukeaa ensimmäisen viikon lukujärjestys. Muiden viikkojen lukujärjestyksiä voi selata yläreunan pudotusvalikosta valitsemalla. "Päivitä"-nappulasta ei ole tässä kohden vielä hyötyä. Valitse haluamasi viikon lukujärjestys ja lisää siihen uutta sisältöä "Lisää uusi" -painikkeella. 
 
-![lukkari1](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/kuvat/lukujarjestys.png)  
+![lukkari1]()  
 
 ## Uuden tapahtuman lisääminen
 Uuden tapahtuman luomista varten on oletuksena kolme aihetta: opiskelu, liikunta ja vapaa. Käyttäjä voi lisätä oman aiheen listaan kirjoittamalla aiheen kenttään ja painamalla "Lisää", minkä jälkeen myös oma aihe löytyy pudotusvalikosta. Omat aiheet säilyvät vain yhden kirjautumisen ajan. Pudotusvalikoista valitaan tapahtumalle alkamis- ja loppumisaika sekä viikonpäivä. Tapahtumien lisäämistä voi jatkaa tai palata lukujärjestykseen "Takaisin"-painikkeella. 
@@ -32,14 +32,17 @@ Uuden tapahtuman luomista varten on oletuksena kolme aihetta: opiskelu, liikunta
 
 Lisätty tapahtuma ilmestyy aktiiviseen lukujärjestykseen. Oletustapahtumissa on omat värinsä ja omat aiheet tulevat näkyviin keltaisella. 
 
-![lukkari2](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/kuvat/lukujarjestys2.png)  
+![lukkari2]()  
 
 ## Tapahtuman poistaminen
 
 Luodun tapahtuman voi poistaa klikkaamalla sitä hiiren vasemmalla painikkeella. Ponnahdusikkunna varmistaa vielä, haluaako käyttäjä poistaa tapahtuman tietyltä hetkeltä. Peruminen tapahtuu "Peruuta"-painikkeesta tai sulkemalla ponnahdusikkuna. 
 
+![lukkari3]()  
 
 Lukujärjestys pitää tämän jälkeen päivittää "Päivitä"-painikkeella, jos haluaa muutoksen näkyviin esillä olevassa lukujärjestyksessä.  
+
+![lukkari4]()  
 
 ## Käytön lopettaminen
 
