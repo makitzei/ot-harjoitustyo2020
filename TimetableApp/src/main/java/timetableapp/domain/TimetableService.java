@@ -16,7 +16,6 @@ public class TimetableService {
     private UserDao userDao;
     private User loggedIn;
     private Timetable activeTable;
-    private ArrayList<Event> activeEvents;
     private List<Timetable> userTimetables;
     
     public TimetableService(UserDao userDao, TimetableDao timetableDao) {
@@ -24,7 +23,6 @@ public class TimetableService {
         this.timetableDao = timetableDao;
         this.loggedIn = null;
         this.activeTable = null;
-        this.activeEvents = null;
         this.userTimetables = null;
     }
     
@@ -70,7 +68,6 @@ public class TimetableService {
         }
         
         userTimetables = timetableDao.findByUsername(username);
-        //this.setActivetable(1);
         loggedIn = user;
          
         return true;
@@ -83,7 +80,6 @@ public class TimetableService {
     
     public void logout() {
         loggedIn = null;
-        activeTable = null;
         userTimetables = null;
     }
     
@@ -119,7 +115,7 @@ public class TimetableService {
                 .orElse(null);
         
         this.activeTable = newActive;
-        this.activeEvents = this.activeTable.getEvents();
+
     }
     
     /**
@@ -146,7 +142,7 @@ public class TimetableService {
     */
     
     public boolean checkEventConflicts(int start, int stop, String day) {
-        for (Event event : this.activeEvents) {
+        for (Event event : this.activeTable.getEvents()) {
             if (day.equals(event.getDay())) {
                 if (start == event.getStart() || stop == event.getStop()) {
                     return true;
@@ -168,8 +164,8 @@ public class TimetableService {
     */
     
     public boolean createEvent(String subject, int start, int stop, String day) {
-        for (int i = start; i< stop; i ++) {
-            Event event = new Event(subject, i, i+1, day);
+        for (int i = start; i < stop; i++) {
+            Event event = new Event(subject, i, i + 1, day);
             try {
                 timetableDao.createEvent(event, activeTable);
             } catch (Exception e) {
@@ -179,9 +175,18 @@ public class TimetableService {
         return true;
     }
     
+    /**
+     * Poistaa tapahtuman aktiivisena olevasta lukujärjestyksestä
+     * 
+     * @param day   tapahtuman viikonpäivä
+     * @param start tapahtuman alkamishetki
+     * 
+     * @return  true, jos poisto onnistuu, muuten false 
+     */
+    
     public boolean deleteEvent(String day, int start) {
         int index = 0;
-        for (Event event : this.activeEvents) {
+        for (Event event : this.activeTable.getEvents()) {
             if (event.getDay().equals(day) && event.getStart() == start) {
                 try {
                     timetableDao.deleteEvent(index, activeTable);
@@ -205,7 +210,7 @@ public class TimetableService {
     public ArrayList<String> eventsToString() {
         ArrayList events = new ArrayList<>();
         try {
-            for (Event event : this.activeEvents) {
+            for (Event event : this.activeTable.getEvents()) {
                 events.add(event.toString());
             }
         } catch (Exception e) {

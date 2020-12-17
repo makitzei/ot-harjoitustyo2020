@@ -315,7 +315,6 @@ public class TimetableUi extends Application {
         loginButton.setOnAction((event) -> {
             String username = loginUsername.getText();
             if (timetableService.login(username)) {
-                //timetableService.setActivetable(1);
                 weekCombo.setValue(1);
                 timetableTest.setText("        ");
                 window.setScene(sceneTimetable);

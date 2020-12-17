@@ -47,12 +47,15 @@ public class FakeTimetableDao implements TimetableDao {
 
     @Override
     public Event createEvent(Event event, Timetable timetable) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        timetable.addEvent(event);
+        return event;
     }
 
     @Override
     public Event deleteEvent(int index, Timetable timetable) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Event event = timetable.getEvents().get(index);
+        timetable.deleteEvent(index);
+        return event;
     }
 
    

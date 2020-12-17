@@ -138,6 +138,17 @@ public class FileTimetableDao implements TimetableDao {
         save();
         return event;
     }
+    
+    /**
+    * Poistaa tapahtuman lukujärjestyksestä
+    * 
+    * @param    index  poistettavan tapahtuman indeksi
+    * @param    timetable  lukujärjestys, josta tapahtuma poistetaan
+    * 
+    * @return   poistettu tapahtuma
+     * @throws java.lang.Exception
+    * 
+    */
 
     @Override
     public Event deleteEvent(int index, Timetable timetable) throws Exception {

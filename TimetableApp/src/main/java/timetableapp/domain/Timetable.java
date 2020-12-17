@@ -12,6 +12,13 @@ public class Timetable {
     private int week;
     private ArrayList<Event> events;
     
+    /**
+     * Konstruktori
+     * 
+     * @param username  käyttäjän käyttäjänimi
+     * @param week      lukujärjestyksen viikko
+     */
+    
     public Timetable(String username, int week) {
         this.username = username;
         this.week = week;
@@ -37,6 +44,12 @@ public class Timetable {
     public void deleteEvent(int index) {
         this.events.remove(index);
     }
+    
+    /**
+     * Lukujärjestyksen tekstimuotoesitys testaamista varten
+     * 
+     * @return Lukujärjestyksen viikko ja tapahtumien määrä osana virkettä "Timetable week __ has __ events" 
+     */
     
     @Override
     public String toString() {

@@ -12,6 +12,16 @@ public class Event {
     private int stop;
     private String day;
     
+    /**
+     * Konstruktori
+     * 
+     * @param   subject     tapahtuman aihe
+     * @param   start       alkamisaika tunteina
+     * @param   stop        loppumisaika tunteina
+     * @param   day         tapahtuman viikonpäivä
+     * 
+     */
+    
     public Event(String subject, int start, int stop, String day) {
         this.subject = subject;
         this.start = start;
@@ -50,6 +60,12 @@ public class Event {
     public void setDay(String day) {
         this.day = day;
     }
+    
+    /**
+     * Tapahtumaolion tekstimuotoesitys
+     * 
+     * @return tapahtuman aihe, päivä, alku ja loppu puolipisteellä erotettuina 
+     */
     
     @Override
     public String toString() {

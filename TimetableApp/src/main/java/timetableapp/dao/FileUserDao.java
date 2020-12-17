@@ -33,11 +33,6 @@ public class FileUserDao implements UserDao {
         
     }
     
-    /**
-    * Tallentaa käyttäjien oikean nimen ja käyttäjänimen tekstitiedoston riville
-    * 
-    */
-    
     private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (User user : users) {

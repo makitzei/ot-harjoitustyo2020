@@ -31,7 +31,7 @@ public class FileTimetableDaoTest {
                 file.write("testEst;" + String.valueOf(i) + ";\n");
             }
             for (int i = 1; i <= 52; i++) {
-                file.write("testEst2;" + String.valueOf(i) + ";\n");
+                file.write("testEst2;" + String.valueOf(i) + ";opiskelu;tiistai;8;16;vapaa;perjantai;9;10" + ";\n");
             }
         }       
         dao = new FileTimetableDao(timetableFile.getAbsolutePath());
@@ -47,6 +47,7 @@ public class FileTimetableDaoTest {
         assertEquals(1, t.getWeek());
         assertEquals("testEst2", t2.getUser());
         assertEquals(1, t2.getWeek());
+        assertEquals("opiskelu;tiistai;8;16", t2.getEvents().get(0).toString());
     }
     
     @Test
@@ -61,6 +62,33 @@ public class FileTimetableDaoTest {
         assertEquals("testEst", t2.getUser());
         assertEquals(52, t2.getWeek());
     }
+    
+    @Test
+    public void savedEventFound() throws Exception {
+        String username = "testEst";
+        List<Timetable> timetables = dao.findByUsername(username);
+        Timetable t = timetables.get(0);
+        Event event1 = new Event("opiskelu", 8, 16, "tiistai");
+        Event event2 = new Event("vapaa", 9, 10, "perjantai");
+        dao.createEvent(event1, t);
+        dao.createEvent(event2, t);
+        assertEquals("opiskelu;tiistai;8;16", t.getEvents().get(0).toString());
+    }
+    
+    @Test
+    public void deletedEventNotFound() throws Exception {
+        String username = "testEst";
+        List<Timetable> timetables = dao.findByUsername(username);
+        Timetable t = timetables.get(0);
+        Event event1 = new Event("opiskelu", 8, 16, "tiistai");
+        Event event2 = new Event("vapaa", 9, 10, "perjantai");
+        dao.createEvent(event2, t);
+        dao.createEvent(event1, t);
+        dao.deleteEvent(0, t);
+        assertEquals("opiskelu;tiistai;8;16", t.getEvents().get(0).toString());
+    }
+    
+    
     
     @After
     public void tearDown() {
