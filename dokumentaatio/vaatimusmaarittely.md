@@ -34,3 +34,4 @@ Sovellusta on mahdollista laajentaa esimerkiksi seuraavilla tavoilla:
 * lukujärjestyksen tehtäviä voisi myös muokata, ei vain poistaa
 * sisäänkirjautumisvaiheessa käyttäjälle voitaisiin näyttää ensimmäisenä ajankohtainen, meneillään olevan viikon lukujärjestys
 * myös käyttäjän itse laatimat aiheet voisi tallentaa tulevaa varten käyttäjäkohtaisesti
+* itse laadituille aiheille voisi olla mahdollisuus valita värit itse
