@@ -125,7 +125,7 @@ public class TimetableUi extends Application {
         }
         ObservableList<Integer> weeks = FXCollections.observableArrayList(weekList);
         ComboBox weekCombo = new ComboBox(weeks);
-        weekCombo.setPromptText(":)");
+        weekCombo.setPromptText("1");
         Label timetableWeek = new Label("Viikko ");
         Label timetableTest = new Label("Testitulostelu"); // Test test
         Button refresh = new Button("Päivitä");
@@ -315,11 +315,13 @@ public class TimetableUi extends Application {
         loginButton.setOnAction((event) -> {
             String username = loginUsername.getText();
             if (timetableService.login(username)) {
-                timetableService.setActivetable(1);
+                //timetableService.setActivetable(1);
+                weekCombo.setValue(1);
                 timetableTest.setText("        ");
                 window.setScene(sceneTimetable);
                 loginUsername.setText("");
                 loginMessage.setText("");
+                refresh.fire();
             }
             else {
                 loginMessage.setText("Käyttäjätunnusta ei löydy");
@@ -369,7 +371,7 @@ public class TimetableUi extends Application {
         
         newEventReturn.setOnAction((event) -> {
             window.setScene(sceneTimetable);
-            weekCombo.fireEvent(event);
+            refresh.fire();
             subjectCombo.setValue(null);
             startCombo.setValue(null);
             stopCombo.setValue(null);

@@ -124,7 +124,7 @@ public class FileTimetableDao implements TimetableDao {
     /**
     * Luo ja tallentaa uuden tapahtuman tiettyyn lukujärjestykseen
     * 
-    * @param    event  listättävä tapahtuma
+    * @param    event  lisättävä tapahtuma
     * @param    timetable  lukujärjestys, johon tapahtuma lisätään
     * 
     * @return   uusi tapahtuma

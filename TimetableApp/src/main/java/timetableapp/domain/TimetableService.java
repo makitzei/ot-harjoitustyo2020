@@ -70,7 +70,7 @@ public class TimetableService {
         }
         
         userTimetables = timetableDao.findByUsername(username);
-        this.setActivetable(1);
+        //this.setActivetable(1);
         loggedIn = user;
          
         return true;
@@ -130,7 +130,7 @@ public class TimetableService {
     
     public int getActivetableWeek() {
         if (activeTable == null) {
-            return 0;
+            return 1;
         }
         return activeTable.getWeek();     
     }
@@ -213,4 +213,5 @@ public class TimetableService {
         }   
         return events;
     }
+
 }
