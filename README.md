@@ -10,7 +10,8 @@ Sovelluksen käyttäjä voi tallentaa erilaisia tehtäviä viikon kaikki päivä
 
 ## Releaset
 [Viikko 5](https://github.com/makitzei/ot-harjoitustyo2020/releases/tag/viikko5)  
-[Viikko 6](https://github.com/makitzei/ot-harjoitustyo2020/releases/tag/viikko6)
+[Viikko 6](https://github.com/makitzei/ot-harjoitustyo2020/releases/tag/viikko6)  
+[Loppupalautus](https://github.com/makitzei/ot-harjoitustyo2020/releases/tag/loppupalautus)
 
 ## Komentorivitoiminnot
 ### Kloonaaminen
