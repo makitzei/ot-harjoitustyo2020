@@ -21,9 +21,9 @@ Uusi käyttäjä voi rekisteröityä syöttämällä oikean nimensä ja uuden k�
 ![kayttajan_luominen](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/kuvat/register.png)
 
 ## Lukujärjestysten katselu
-Käyttäjän kirjautuessa onnistuneesti aukeaa ensimmäisen viikon lukujärjestys. Muiden viikkojen lukujärjestyksiä voi selata yläreunan pudotusvalikosta valitsemalla. "Päivitä"-nappulasta ei ole tässä kohden vielä hyötyä. Valitse haluamasi viikon lukujärjestys ja lisää siihen uutta sisältöä "Lisää uusi" -painikkeella. 
+Käyttäjän kirjautuessa onnistuneesti aukeaa ensimmäisen viikon lukujärjestys. Muiden viikkojen lukujärjestyksiä voi selata yläreunan pudotusvalikosta valitsemalla. Näkyvillä olevaan lukujärjestykseen saa lisättyä uutta sisältöä "Lisää uusi" -painikkeella. "Päivitä"-nappulasta ei ole tässä kohden vielä hyötyä.
 
-![lukkari1]()  
+![lukkari1](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/kuvat/lukkari1_v2.png)  
 
 ## Uuden tapahtuman lisääminen
 Uuden tapahtuman luomista varten on oletuksena kolme aihetta: opiskelu, liikunta ja vapaa. Käyttäjä voi lisätä oman aiheen listaan kirjoittamalla aiheen kenttään ja painamalla "Lisää", minkä jälkeen myös oma aihe löytyy pudotusvalikosta. Omat aiheet säilyvät vain yhden kirjautumisen ajan. Pudotusvalikoista valitaan tapahtumalle alkamis- ja loppumisaika sekä viikonpäivä. Tapahtumien lisäämistä voi jatkaa tai palata lukujärjestykseen "Takaisin"-painikkeella. 
@@ -32,21 +32,21 @@ Uuden tapahtuman luomista varten on oletuksena kolme aihetta: opiskelu, liikunta
 
 Lisätty tapahtuma ilmestyy aktiiviseen lukujärjestykseen. Oletustapahtumissa on omat värinsä ja omat aiheet tulevat näkyviin keltaisella. 
 
-![lukkari2]()  
+![lukkari2](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/kuvat/lukkari2_v2.png)  
 
 ## Tapahtuman poistaminen
 
-Luodun tapahtuman voi poistaa klikkaamalla sitä hiiren vasemmalla painikkeella. Ponnahdusikkunna varmistaa vielä, haluaako käyttäjä poistaa tapahtuman tietyltä hetkeltä. Peruminen tapahtuu "Peruuta"-painikkeesta tai sulkemalla ponnahdusikkuna. 
+Luodun tapahtuman voi poistaa klikkaamalla sitä hiiren vasemmalla painikkeella. Ponnahdusikkuna varmistaa vielä, haluaako käyttäjä poistaa tapahtuman tietyltä hetkeltä. Peruminen tapahtuu "Peruuta"-painikkeesta tai sulkemalla ponnahdusikkuna. 
 
-![lukkari3]()  
+![lukkari3](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/kuvat/lukkari3_v2.png)  
 
-Lukujärjestys pitää tämän jälkeen päivittää "Päivitä"-painikkeella, jos haluaa muutoksen näkyviin esillä olevassa lukujärjestyksessä.  
+Jos tapahtuman poistaa, lukujärjestys pitää tämän jälkeen vielä päivittää "Päivitä"-painikkeella, jotta muutoksen saa näkyviin esillä olevassa lukujärjestyksessä.  
 
-![lukkari4]()  
+![lukkari4](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/kuvat/lukkari4_v2.png)  
 
 ## Käytön lopettaminen
 
-Lukujärjestysnäkymästä käyttäjällä on mahdollisuus kirjautua ulos painikkeella "Kirjaudu ulos". Ohjelma voi lopettaa sulkemalla ikkunan.
+Lukujärjestysnäkymästä käyttäjällä on mahdollisuus kirjautua ulos painikkeella "Kirjaudu ulos". Ohjelman voi lopettaa sulkemalla ikkunan.
 
 
 ### Kloonaaminen
