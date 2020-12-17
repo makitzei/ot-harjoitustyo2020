@@ -28,4 +28,5 @@
 17.12. | 1 | Javadocin päivittämistä
 17.12. | 2 | testien päivittämistä ja muuta korjailua
 17.12. | 3 | dokumentaatio
-yht. | 64,5 |
+17.12. | 1 | loppupalautuksen valmistelu, palautus ja testaus
+yht. | 65,5 |
