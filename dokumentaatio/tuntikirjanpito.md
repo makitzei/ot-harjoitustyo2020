@@ -24,4 +24,7 @@
 8.12. | 5 | tapahtuman graafinen lisääminen lukujärjestykseen - 1. kehnohko versio
 8.12. | 1 | dokumentaatio
 16.12. | 8 | käyttöliittymän ja toimintojen parantelu
-yht. | 57,5 |
+17.12. | 1 | käyttöliittymän parantelu
+17.12. | 1 | Javadocin päivittämistä
+17.12. | 2 | Testien päivittämistä ja muuta korjailua
+yht. | 61,5 |
