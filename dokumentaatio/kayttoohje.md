@@ -16,27 +16,34 @@ Sovelluksen aluksi aukeaa kirjautumisikkuna, josta pääsee lukujärjestykseen s
 Jos käyttäjätunnusta ei vielä ole, sen voi luoda "Luo uusi käyttäjä" -painikkeesta.  
 
 ## Uuden käyttäjän luominen
-Uusi käyttäjä voi rekisteröityä syöttämällä oikean nimensä ja uuden käyttäjätunnuksen. Käyttäjätunnuksen tulee olla uniikki. Sekä käyttäjätunnuksen että oikean nimen tulee olla vähintään neljä merkkiä pitkiä.    
+Uusi käyttäjä voi rekisteröityä syöttämällä oikean nimensä ja uuden käyttäjätunnuksen. Käyttäjätunnuksen tulee olla uniikki. Sekä käyttäjätunnuksen että oikean nimen tulee olla vähintään neljä merkkiä pitkiä. Nyt kirjautuminen onnistuu uudella tunnuksella. Jos tunnuksen luomisen haluaa keskeyttää, voi palata kirjautumisnäkymään "Takaisin"-painikkeella.  
 
 ![kayttajan_luominen](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/kuvat/register.png)
 
 ## Lukujärjestysten katselu
-Käyttäjän kirjautuessa onnistuneesti aukeaa ensimmäisen viikon lukujärjestys, ainakin näin alustavasti. Muiden viikkojen lukujärjestyksiä voi selata yläreunan pudotusvalikosta valitsemalla. Nyt yläreunassa on vielä testitulostus, joka ilmoittaa, että valittu lukujärjestys todella on aktiivisena järjestelmässä.  
+Käyttäjän kirjautuessa onnistuneesti aukeaa ensimmäisen viikon lukujärjestys. Muiden viikkojen lukujärjestyksiä voi selata yläreunan pudotusvalikosta valitsemalla. "Päivitä"-nappulasta ei ole tässä kohden vielä hyötyä. Valitse haluamasi viikon lukujärjestys ja lisää siihen uutta sisältöä "Lisää uusi" -painikkeella. 
 
 ![lukkari1](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/kuvat/lukujarjestys.png)  
 
-Uuden tapahtuman voi lisätä "Lisää uusi" -painikkeesta.
-
 ## Uuden tapahtuman lisääminen
-Uusen tapahtuman luomista varten on alustavasti kolme aihetta ja yhden istunnon aikana käyttäjä voi lisätä uusia aiheita. Pudotusvalikoista valitaan tapahtumalle alkamis- ja loppumisaika sekä viikonpäivä.  
+Uuden tapahtuman luomista varten on oletuksena kolme aihetta: opiskelu, liikunta ja vapaa. Käyttäjä voi lisätä oman aiheen listaan kirjoittamalla aiheen kenttään ja painamalla "Lisää", minkä jälkeen myös oma aihe löytyy pudotusvalikosta. Omat aiheet säilyvät vain yhden kirjautumisen ajan. Pudotusvalikoista valitaan tapahtumalle alkamis- ja loppumisaika sekä viikonpäivä. Tapahtumien lisäämistä voi jatkaa tai palata lukujärjestykseen "Takaisin"-painikkeella. 
 
 ![addsubject](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/kuvat/addsubject.png)  
 
-Lisätty tapahtuma ilmestyy aktiiviseen lukujärjestykseen alustavasti seuraavan näköisenä. Tässä vaiheessa kalentereita joutuu selata vielä hieman edestakaisin, jotta tapahtuman näkee.  
+Lisätty tapahtuma ilmestyy aktiiviseen lukujärjestykseen. Oletustapahtumissa on omat värinsä ja omat aiheet tulevat näkyviin keltaisella. 
 
 ![lukkari2](https://github.com/makitzei/ot-harjoitustyo2020/blob/master/dokumentaatio/kuvat/lukujarjestys2.png)  
 
-Lukujärjestysnäkymästä käyttäjällä on mahdollisuus kirjautua ulos painikkeella. Ohjelma voi lopettaa sulkemalla ikkunan.
+## Tapahtuman poistaminen
+
+Luodun tapahtuman voi poistaa klikkaamalla sitä hiiren vasemmalla painikkeella. Ponnahdusikkunna varmistaa vielä, haluaako käyttäjä poistaa tapahtuman tietyltä hetkeltä. Peruminen tapahtuu "Peruuta"-painikkeesta tai sulkemalla ponnahdusikkuna. 
+
+
+Lukujärjestys pitää tämän jälkeen päivittää "Päivitä"-painikkeella, jos haluaa muutoksen näkyviin esillä olevassa lukujärjestyksessä.  
+
+## Käytön lopettaminen
+
+Lukujärjestysnäkymästä käyttäjällä on mahdollisuus kirjautua ulos painikkeella "Kirjaudu ulos". Ohjelma voi lopettaa sulkemalla ikkunan.
 
 
 ### Kloonaaminen
