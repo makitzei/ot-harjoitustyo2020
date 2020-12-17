@@ -46,6 +46,10 @@ Projektin hakemistoon *target* saa generoitua suoritettavan jar-tiedoston *Timet
 ```
 mvn package
 ```
+Ohjelma käynnistetään .jar-tiedoston avulla komennolla 
+```
+java -jar TimetableApp-1.0-SNAPSHOT.jar
+```
 
 ### Checkstyle
 Tiedostossa checkstyle.xml on määritelty koodin tarkistukset, jotka voi suorittaa komennolla
